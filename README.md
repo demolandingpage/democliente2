@@ -1,2 +1,12 @@
 # democliente2
-Landingpage_NCC
+
+Landing page per servizio NCC.
+
+## Descrizione
+Questo repository contiene i file della landing page del cliente, pensata per presentare il servizio, raccogliere contatti e mostrare i principali vantaggi.
+
+## Contenuti previsti
+- Hero section
+- Descrizione del servizio
+- Call to action
+- Contatti
