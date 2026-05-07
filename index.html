@@ -9,7 +9,7 @@
     <meta name="author" content="Andrei NCC Roma">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://tuodominio.com/">
-    <!-- Schema markup JSON-LD (Local Business / Chauffeur Service) -->
+    <!-- Schema markup JSON-LD -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -17,7 +17,6 @@
       "name": "Andrei NCC Roma",
       "description": "Servizio NCC di lusso a Roma: transfer aeroporti Fiumicino e Ciampino, hotel, stazioni, tour privati. Autista professionista, Mercedes premium, puntualità garantita.",
       "image": "https://tuodominio.com/images/mercedes-bg.jpg",
-      "logo": "https://tuodominio.com/images/logo.png",
       "url": "https://tuodominio.com",
       "telephone": "+393791234567",
       "email": "andrei@nccroma.it",
@@ -39,10 +38,7 @@
         "opens": "00:00",
         "closes": "23:59"
       },
-      "serviceType": ["NCC aeroporto","transfer privati","chauffeur service","NCC premium","transfer business"],
-      "areaServed": { "@type": "City", "name": "Roma" },
-      "availableLanguage": ["Italian","English","Romanian"],
-      "paymentAccepted": ["Cash","Credit Card","Bank Transfer","PayPal"]
+      "serviceType": ["NCC aeroporto","transfer privati","chauffeur service","NCC premium","transfer business"]
     }
     </script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
@@ -91,7 +87,6 @@
         .btn-gold:hover {
             background: #C5A028;
             transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(212, 175, 55, 0.2);
         }
         .btn-outline-gold {
             background: transparent;
@@ -102,13 +97,13 @@
             background: #D4AF37;
             color: #0A0A0A;
         }
-        /* Hero con immagine dalla cartella images */
+        /* HERO con sfondo ben visibile (overlay più leggero) */
         .hero {
             position: relative;
             min-height: 100vh;
             display: flex;
             align-items: center;
-            background: linear-gradient(135deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.6) 100%), url('images/mercedes-bg.jpg') center/cover no-repeat;
+            background: linear-gradient(135deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.4) 100%), url('images/mercedes-bg.jpg') center/cover no-repeat;
         }
         .hero .container {
             position: relative;
@@ -119,12 +114,14 @@
             font-weight: 700;
             margin-bottom: 1rem;
             color: #FFFFFF;
+            text-shadow: 0 2px 5px rgba(0,0,0,0.3);
         }
         .hero p {
             font-size: 1.25rem;
             max-width: 600px;
             margin-bottom: 2rem;
-            color: #DDDDDD;
+            color: #F5F5F5;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.2);
         }
         .hero-buttons {
             display: flex;
@@ -141,6 +138,7 @@
             font-size: 1rem;
             text-align: center;
         }
+        /* Servizi e features (invariati) */
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -152,7 +150,7 @@
             border-radius: 24px;
             padding: 2rem 1.5rem;
             text-align: center;
-            transition: transform 0.3s, box-shadow 0.3s;
+            transition: transform 0.3s;
             border: 1px solid #2A2A2A;
         }
         .service-card:hover {
@@ -183,6 +181,7 @@
             color: #D4AF37;
             margin-bottom: 0.75rem;
         }
+        /* Driver section migliorata */
         .driver-section {
             display: flex;
             flex-wrap: wrap;
@@ -202,6 +201,7 @@
             max-width: 280px;
             border-radius: 50%;
             border: 4px solid #D4AF37;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
             object-fit: cover;
             aspect-ratio: 1/1;
         }
@@ -213,6 +213,7 @@
             color: #D4AF37;
             margin-bottom: 1rem;
         }
+        /* Prezzi */
         .prices-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -237,10 +238,75 @@
             color: white;
             margin: 1rem 0;
         }
-        /* Carosello recensioni */
-        .testimonials-section {
+        /* Galleria carosello (nuova sezione) */
+        .gallery-section {
             background: #0A0A0A;
         }
+        .gallery-slider {
+            position: relative;
+            max-width: 1000px;
+            margin: 0 auto;
+            overflow: hidden;
+            border-radius: 24px;
+        }
+        .gallery-track {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+        .gallery-slide {
+            flex: 0 0 100%;
+            padding: 0 10px;
+        }
+        .gallery-slide img {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            border-radius: 24px;
+            border: 1px solid #D4AF37;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+        }
+        .gallery-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(212,175,55,0.7);
+            border: none;
+            color: white;
+            font-size: 1.8rem;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            cursor: pointer;
+            z-index: 2;
+            transition: 0.2s;
+        }
+        .gallery-btn:hover {
+            background: #D4AF37;
+            color: #0A0A0A;
+        }
+        .gallery-prev {
+            left: 10px;
+        }
+        .gallery-next {
+            right: 10px;
+        }
+        .gallery-dots {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .gallery-dot {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #444;
+            margin: 0 5px;
+            cursor: pointer;
+        }
+        .gallery-dot.active {
+            background: #D4AF37;
+        }
+        /* Carosello recensioni */
         .testimonial-slider {
             position: relative;
             max-width: 900px;
@@ -270,10 +336,6 @@
             font-style: italic;
             margin: 1rem 0;
         }
-        .testimonial-card h4 {
-            color: #D4AF37;
-            margin-top: 0.5rem;
-        }
         .slider-btn {
             position: absolute;
             top: 50%;
@@ -286,19 +348,14 @@
             height: 44px;
             border-radius: 50%;
             cursor: pointer;
-            transition: 0.2s;
             z-index: 2;
         }
         .slider-btn:hover {
             background: #D4AF37;
             color: #0A0A0A;
         }
-        .slider-prev {
-            left: 10px;
-        }
-        .slider-next {
-            right: 10px;
-        }
+        .slider-prev { left: 10px; }
+        .slider-next { right: 10px; }
         .dots {
             text-align: center;
             margin-top: 20px;
@@ -315,6 +372,7 @@
         .dot.active {
             background: #D4AF37;
         }
+        /* CTA e footer */
         .cta-final {
             text-align: center;
             background: linear-gradient(135deg, #D4AF37 0%, #B88F1A 100%);
@@ -369,7 +427,6 @@
             font-size: 2rem;
             box-shadow: 0 6px 16px rgba(0,0,0,0.3);
             z-index: 100;
-            transition: 0.2s;
         }
         .whatsapp-sticky:hover {
             transform: scale(1.08);
@@ -378,6 +435,7 @@
             section { padding: 60px 0; }
             .hero h1 { font-size: 2.2rem; }
             .driver-section { flex-direction: column; text-align: center; }
+            .gallery-slide img { height: 300px; }
             .btn { padding: 12px 24px; }
         }
         .fade-up {
@@ -389,26 +447,22 @@
             opacity: 1;
             transform: translateY(0);
         }
-        img {
-            max-width: 100%;
-            height: auto;
-        }
     </style>
 </head>
 <body>
 
 <!-- Sticky WhatsApp -->
-<a href="https://wa.me/393791234567?text=Salve%20Andrei%2C%20vorrei%20richiedere%20un%20preventivo%20per%20un%20transfer%20a%20Roma" class="whatsapp-sticky" target="_blank" rel="noopener noreferrer" aria-label="Contatta su WhatsApp">
+<a href="https://wa.me/393791234567?text=Salve%20Andrei%2C%20vorrei%20richiedere%20un%20preventivo" class="whatsapp-sticky" target="_blank" rel="noopener noreferrer" aria-label="Contatta su WhatsApp">
     <i class="fab fa-whatsapp"></i>
 </a>
 
-<!-- Hero Section con immagine dalla cartella images/mercedes-bg.jpg -->
+<!-- Hero con sfondo del van (overlay ridotto per visibilità) -->
 <section class="hero">
     <div class="container">
         <div class="fade-up">
             <h1>Transfer privati a Roma</h1>
             <h1 style="font-size: 2rem; margin-top: -0.5rem; color: #D4AF37;">Comfort, puntualità e zero stress</h1>
-            <p>Viaggia con stile e sicurezza. Servizio NCC esclusivo a Roma: aeroporti, hotel, stazioni, tour privati. Un autista professionista sempre al tuo servizio.</p>
+            <p>Viaggia con stile e sicurezza. Servizio NCC esclusivo a Roma: aeroporti, hotel, stazioni, tour privati.</p>
             <div class="hero-buttons">
                 <a href="#prenota" class="btn btn-gold">Prenota ora</a>
                 <a href="https://wa.me/393791234567?text=Richiedo%20preventivo" target="_blank" class="btn btn-outline-gold">Richiedi preventivo WhatsApp</a>
@@ -423,30 +477,10 @@
         <h2 class="fade-up" style="text-align: center; color: #D4AF37; margin-bottom: 1rem;">Servizi esclusivi NCC</h2>
         <p class="fade-up" style="text-align: center; max-width: 700px; margin: 0 auto 2rem;">Ogni transfer è pensato per garantirti la massima comodità e puntualità.</p>
         <div class="services-grid">
-            <div class="service-card fade-up">
-                <i class="fas fa-plane-departure"></i>
-                <h3>Transfer Aeroporti</h3>
-                <p>Fiumicino (FCO) e Ciampino (CIA). Accoglienza con cartello, monitoraggio volo.</p>
-                <div class="gold-text" style="margin-top: 12px;">✔️ Puntuale e senza attese</div>
-            </div>
-            <div class="service-card fade-up">
-                <i class="fas fa-hotel"></i>
-                <h3>Transfer Hotel & Città</h3>
-                <p>Spostamenti rapidi in centro, stazioni Termini/Tiburtina, qualsiasi indirizzo.</p>
-                <div class="gold-text" style="margin-top: 12px;">✔️ Porta a porta</div>
-            </div>
-            <div class="service-card fade-up">
-                <i class="fas fa-briefcase"></i>
-                <h3>Servizio Business</h3>
-                <p>Per riunioni, fiere e clienti executive. Wi-Fi, acqua, massima discrezione.</p>
-                <div class="gold-text" style="margin-top: 12px;">✔️ Ambiente di lavoro a bordo</div>
-            </div>
-            <div class="service-card fade-up">
-                <i class="fas fa-map-marked-alt"></i>
-                <h3>Tour Personalizzati</h3>
-                <p>Gite fuori porta, Castelli Romani, trasferimenti verso Civitavecchia.</p>
-                <div class="gold-text" style="margin-top: 12px;">✔️ Autista esperto</div>
-            </div>
+            <div class="service-card fade-up"><i class="fas fa-plane-departure"></i><h3>Transfer Aeroporti</h3><p>Fiumicino e Ciampino. Accoglienza con cartello, monitoraggio volo.</p><div class="gold-text">✔️ Puntuale</div></div>
+            <div class="service-card fade-up"><i class="fas fa-hotel"></i><h3>Transfer Hotel & Città</h3><p>Spostamenti rapidi in centro, stazioni, qualsiasi indirizzo.</p><div class="gold-text">✔️ Porta a porta</div></div>
+            <div class="service-card fade-up"><i class="fas fa-briefcase"></i><h3>Servizio Business</h3><p>Per riunioni, fiere e clienti executive. Wi-Fi, acqua.</p><div class="gold-text">✔️ Discrezione</div></div>
+            <div class="service-card fade-up"><i class="fas fa-map-marked-alt"></i><h3>Tour Personalizzati</h3><p>Castelli Romani, Civitavecchia, escursioni su misura.</p><div class="gold-text">✔️ Autista esperto</div></div>
         </div>
     </div>
 </section>
@@ -456,16 +490,36 @@
     <div class="container">
         <h2 class="fade-up" style="text-align: center; color: #D4AF37;">Perché scegliere Andrei NCC</h2>
         <div class="features-grid">
-            <div class="feature-item fade-up"><i class="fas fa-door-open"></i><h4>Porta a porta</h4><p>Ti prelevo e ti lascio dove desideri</p></div>
-            <div class="feature-item fade-up"><i class="fas fa-clock"></i><h4>Disponibilità H24</h4><p>Prenotazioni notturne, voli in ritardo? Nessun problema</p></div>
-            <div class="feature-item fade-up"><i class="fas fa-car-side"></i><h4>Veicolo premium</h4><p>Mercedes Classe V / Vito, spazioso e confortevole</p></div>
-            <div class="feature-item fade-up"><i class="fas fa-user-tie"></i><h4>Autista professionale</h4><p>Andrei, pluriennale esperienza</p></div>
-            <div class="feature-item fade-up"><i class="fas fa-map-marked-alt"></i><h4>Accesso ZTL</h4><p>Transito autorizzato in tutte le zone a traffico limitato</p></div>
+            <div class="feature-item fade-up"><i class="fas fa-door-open"></i><h4>Porta a porta</h4><p>Prelievo e destinazione ovunque</p></div>
+            <div class="feature-item fade-up"><i class="fas fa-clock"></i><h4>Disponibilità H24</h4><p>Prenotazioni notturne e voli ritardati</p></div>
+            <div class="feature-item fade-up"><i class="fas fa-car-side"></i><h4>Veicolo premium</h4><p>Mercedes Classe V, spaziosa e confortevole</p></div>
+            <div class="feature-item fade-up"><i class="fas fa-user-tie"></i><h4>Autista professionale</h4><p>Andrei, esperienza e affidabilità</p></div>
+            <div class="feature-item fade-up"><i class="fas fa-map-marked-alt"></i><h4>Accesso ZTL</h4><p>Transito autorizzato in centro</p></div>
         </div>
     </div>
 </section>
 
-<!-- Foto autista + bio (Andrei) con immagine dalla cartella images/andrei.jpg -->
+<!-- NUOVA GALLERIA IMMAGINI DEL VAN (carosello) -->
+<section class="gallery-section">
+    <div class="container">
+        <h2 class="fade-up" style="text-align: center; color: #D4AF37;">La nostra flotta</h2>
+        <p class="fade-up" style="text-align: center; margin-bottom: 2rem;">Mercedes Classe V – Spazio, eleganza e tecnologia per i tuoi viaggi</p>
+        <div class="gallery-slider fade-up">
+            <button class="gallery-btn gallery-prev" id="galleryPrev"><i class="fas fa-chevron-left"></i></button>
+            <div class="gallery-track" id="galleryTrack">
+                <div class="gallery-slide"><img src="images/van1.jpg" alt="Mercedes NCC Roma - esterno" loading="lazy"></div>
+                <div class="gallery-slide"><img src="images/van2.jpg" alt="Interno Mercedes Classe V - Sedili premium" loading="lazy"></div>
+                <div class="gallery-slide"><img src="images/van3.jpg" alt="Bagagliaio spazioso" loading="lazy"></div>
+                <div class="gallery-slide"><img src="images/van4.jpg" alt="Mercedes in strada" loading="lazy"></div>
+            </div>
+            <button class="gallery-btn gallery-next" id="galleryNext"><i class="fas fa-chevron-right"></i></button>
+        </div>
+        <div class="gallery-dots" id="galleryDots"></div>
+        <p class="fade-up" style="text-align: center; margin-top: 1rem; font-size: 0.9rem;">*Immagini di esempio – sostituisci con le tue foto nella cartella images/</p>
+    </div>
+</section>
+
+<!-- Driver (Andrei) con immagine ben visibile -->
 <section class="section-gray">
     <div class="container">
         <div class="driver-section fade-up">
@@ -484,35 +538,33 @@
 <section id="prezzi" class="section-dark">
     <div class="container">
         <h2 class="fade-up" style="text-align: center; color: #D4AF37;">Tratte frequenti – Prezzi indicativi</h2>
-        <p class="fade-up" style="text-align: center; margin-bottom: 2rem;">Costo fisso, senza sorprese. Servizio di alta qualità.</p>
+        <p class="fade-up" style="text-align: center; margin-bottom: 2rem;">Costo fisso, senza sorprese.</p>
         <div class="prices-grid">
-            <div class="price-card fade-up"><h4>Roma centro → Fiumicino (FCO)</h4><div class="price">€ 55 <small>*(fisso)</small></div><p>Monitoraggio volo, bagagli inclusi</p></div>
-            <div class="price-card fade-up"><h4>Roma centro → Ciampino (CIA)</h4><div class="price">€ 45 <small>*(fisso)</small></div><p>Puntualità garantita</p></div>
-            <div class="price-card fade-up"><h4>Roma → Porto Civitavecchia</h4><div class="price">€ 110 <small>*(andata)</small></div><p>Transfer crocieristi, attesa inclusa</p></div>
-            <div class="price-card fade-up"><h4>Tour privato (3h)</h4><div class="price">€ 150 <small>*(partenza Roma)</small></div><p>Itinerario personalizzato</p></div>
+            <div class="price-card fade-up"><h4>Roma centro → Fiumicino (FCO)</h4><div class="price">€ 55 <small>*</small></div><p>Monitoraggio volo, bagagli inclusi</p></div>
+            <div class="price-card fade-up"><h4>Roma centro → Ciampino (CIA)</h4><div class="price">€ 45 <small>*</small></div><p>Puntualità garantita</p></div>
+            <div class="price-card fade-up"><h4>Roma → Porto Civitavecchia</h4><div class="price">€ 110 <small>*</small></div><p>Transfer crocieristi, attesa inclusa</p></div>
+            <div class="price-card fade-up"><h4>Tour privato (3h)</h4><div class="price">€ 150 <small>*</small></div><p>Itinerario personalizzato</p></div>
         </div>
         <p class="fade-up" style="text-align: center; font-size: 0.85rem;">*Prezzi IVA inclusa. Richiedi preventivo per percorsi personalizzati.</p>
     </div>
 </section>
 
-<!-- Recensioni (carosello pronto per Trustpilot) -->
+<!-- Recensioni (carosello) -->
 <section class="testimonials-section">
     <div class="container">
         <h2 class="fade-up" style="text-align: center; color: #D4AF37;">Cosa dicono i nostri clienti</h2>
         <p class="fade-up" style="text-align: center; margin-bottom: 2rem;">Oltre 150 recensioni a 5 stelle su Trustpilot</p>
         <div class="testimonial-slider fade-up">
-            <button class="slider-btn slider-prev" id="prevBtn"><i class="fas fa-chevron-left"></i></button>
-            <div class="testimonial-track" id="testimonialTrack">
-                <div class="testimonial-card"><div class="stars">★★★★★</div><p>"Servizio impeccabile. Andrei è stato puntuale, la macchina impeccabile. Aeroporto Fiumicino raggiunto in totale relax. Consigliatissimo!"</p><h4>— Laura M.</h4><small><i class="fab fa-trustpilot"></i> Trustpilot</small></div>
-                <div class="testimonial-card"><div class="stars">★★★★★</div><p>"Transfer business da Roma a Fiera Roma. Autista professionale, Mercedes confortevole. Tornerò a prenotare con Andrei."</p><h4>— Marco R.</h4><small><i class="fab fa-trustpilot"></i> Trustpilot</small></div>
-                <div class="testimonial-card"><div class="stars">★★★★★</div><p>"Ho prenotato all'ultimo minuto un transfer per Ciampino. Gentile, disponibile e super puntuale. 5 stelle meritate."</p><h4>— Sofia L.</h4><small><i class="fab fa-trustpilot"></i> Trustpilot</small></div>
+            <button class="slider-btn slider-prev" id="testPrev"><i class="fas fa-chevron-left"></i></button>
+            <div class="testimonial-track" id="testTrack">
+                <div class="testimonial-card"><div class="stars">★★★★★</div><p>"Servizio impeccabile. Andrei puntuale, macchina impeccabile. Consigliatissimo!"</p><h4>— Laura M.</h4><small><i class="fab fa-trustpilot"></i> Trustpilot</small></div>
+                <div class="testimonial-card"><div class="stars">★★★★★</div><p>"Transfer business da Roma a Fiera Roma. Autista professionale, Mercedes confortevole."</p><h4>— Marco R.</h4><small><i class="fab fa-trustpilot"></i> Trustpilot</small></div>
+                <div class="testimonial-card"><div class="stars">★★★★★</div><p>"Prenotato all'ultimo minuto per Ciampino. Gentile, disponibile e puntuale."</p><h4>— Sofia L.</h4><small><i class="fab fa-trustpilot"></i> Trustpilot</small></div>
             </div>
-            <button class="slider-btn slider-next" id="nextBtn"><i class="fas fa-chevron-right"></i></button>
+            <button class="slider-btn slider-next" id="testNext"><i class="fas fa-chevron-right"></i></button>
         </div>
-        <div class="dots" id="dotsContainer"></div>
-        <div style="text-align: center; margin-top: 30px;">
-            <a href="#" style="color: #D4AF37; text-decoration: underline;">Leggi tutte le recensioni su Trustpilot →</a>
-        </div>
+        <div class="dots" id="testDots"></div>
+        <div style="text-align: center; margin-top: 30px;"><a href="#" style="color: #D4AF37; text-decoration: underline;">Leggi tutte su Trustpilot →</a></div>
     </div>
 </section>
 
@@ -522,8 +574,8 @@
         <div class="cta-final fade-up">
             <h2>Pronto per un transfer senza stress?</h2>
             <p style="font-size: 1.2rem; margin-bottom: 1.5rem;">Scrivimi ora su WhatsApp, riceverai subito un preventivo chiaro e senza impegno.</p>
-            <a href="https://wa.me/393791234567?text=Salve%20Andrei%2C%20vorrei%20richiedere%20un%20preventivo" target="_blank" class="btn-whatsapp"><i class="fab fa-whatsapp"></i> Scrivimi su WhatsApp</a>
-            <p style="margin-top: 1rem; font-size: 1.2rem;">📞 <a href="tel:+393791234567" style="color:#0A0A0A; text-decoration: underline; font-weight: bold;">+39 379 123 4567</a> (chiama o scrivi)</p>
+            <a href="https://wa.me/393791234567?text=Salve%20Andrei" target="_blank" class="btn-whatsapp"><i class="fab fa-whatsapp"></i> Scrivimi su WhatsApp</a>
+            <p style="margin-top: 1rem;">📞 <a href="tel:+393791234567" style="color:#0A0A0A; text-decoration: underline; font-weight: bold;">+39 379 123 4567</a></p>
         </div>
     </div>
 </section>
@@ -531,55 +583,91 @@
 <footer class="footer">
     <div class="container">
         <p><strong>Andrei NCC Roma</strong> – P.IVA 1234567890</p>
-        <p>Zona operativa: Roma e provincia (Aeroporti Fiumicino/Ciampino, Centro, Stazioni, Porto Civitavecchia)</p>
+        <p>Zona operativa: Roma e provincia (Aeroporti FCO/CIA, Centro, Stazioni, Porto Civitavecchia)</p>
         <p>📞 <a href="tel:+393791234567">+39 379 123 4567</a> | 📧 <a href="mailto:andrei@nccroma.it">andrei@nccroma.it</a></p>
         <p>Servizio H24 – Su prenotazione</p>
-        <p style="margin-top: 1rem; font-size: 0.75rem;">© 2025 Andrei NCC – Transfer di lusso a Roma</p>
+        <p>© 2025 Andrei NCC – Transfer di lusso a Roma</p>
     </div>
 </footer>
 
 <script>
-    // Slider recensioni
-    const track = document.getElementById('testimonialTrack');
-    const prevBtn = document.getElementById('prevBtn');
-    const nextBtn = document.getElementById('nextBtn');
-    const dotsContainer = document.getElementById('dotsContainer');
-    let currentIndex = 0;
-    let totalSlides = 0;
+    // Galleria immagini
+    const galleryTrack = document.getElementById('galleryTrack');
+    const galleryPrev = document.getElementById('galleryPrev');
+    const galleryNext = document.getElementById('galleryNext');
+    const galleryDots = document.getElementById('galleryDots');
+    let galleryIndex = 0;
+    let galleryTotal = 0;
 
-    function updateSlider() {
-        if (!track) return;
-        const slideWidth = track.children[0].clientWidth;
-        track.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
-        Array.from(dotsContainer.children).forEach((dot, i) => dot.classList.toggle('active', i === currentIndex));
+    function updateGallery() {
+        if (!galleryTrack) return;
+        const slideWidth = galleryTrack.children[0].clientWidth;
+        galleryTrack.style.transform = `translateX(-${galleryIndex * slideWidth}px)`;
+        Array.from(galleryDots.children).forEach((dot, i) => dot.classList.toggle('active', i === galleryIndex));
     }
 
-    function initSlider() {
-        if (!track) return;
-        totalSlides = track.children.length;
-        if (totalSlides === 0) return;
-        dotsContainer.innerHTML = '';
-        for (let i = 0; i < totalSlides; i++) {
+    function initGallery() {
+        if (!galleryTrack) return;
+        galleryTotal = galleryTrack.children.length;
+        if (galleryTotal === 0) return;
+        galleryDots.innerHTML = '';
+        for (let i = 0; i < galleryTotal; i++) {
+            const dot = document.createElement('span');
+            dot.classList.add('gallery-dot');
+            if (i === 0) dot.classList.add('active');
+            dot.addEventListener('click', () => { galleryIndex = i; updateGallery(); });
+            galleryDots.appendChild(dot);
+        }
+        galleryPrev?.addEventListener('click', () => { galleryIndex = (galleryIndex - 1 + galleryTotal) % galleryTotal; updateGallery(); });
+        galleryNext?.addEventListener('click', () => { galleryIndex = (galleryIndex + 1) % galleryTotal; updateGallery(); });
+        window.addEventListener('resize', () => updateGallery());
+        updateGallery();
+    }
+
+    // Recensioni
+    const testTrack = document.getElementById('testTrack');
+    const testPrev = document.getElementById('testPrev');
+    const testNext = document.getElementById('testNext');
+    const testDots = document.getElementById('testDots');
+    let testIndex = 0;
+    let testTotal = 0;
+
+    function updateTest() {
+        if (!testTrack) return;
+        const slideWidth = testTrack.children[0].clientWidth;
+        testTrack.style.transform = `translateX(-${testIndex * slideWidth}px)`;
+        Array.from(testDots.children).forEach((dot, i) => dot.classList.toggle('active', i === testIndex));
+    }
+
+    function initTest() {
+        if (!testTrack) return;
+        testTotal = testTrack.children.length;
+        if (testTotal === 0) return;
+        testDots.innerHTML = '';
+        for (let i = 0; i < testTotal; i++) {
             const dot = document.createElement('span');
             dot.classList.add('dot');
             if (i === 0) dot.classList.add('active');
-            dot.addEventListener('click', () => { currentIndex = i; updateSlider(); });
-            dotsContainer.appendChild(dot);
+            dot.addEventListener('click', () => { testIndex = i; updateTest(); });
+            testDots.appendChild(dot);
         }
-        prevBtn?.addEventListener('click', () => { currentIndex = (currentIndex - 1 + totalSlides) % totalSlides; updateSlider(); });
-        nextBtn?.addEventListener('click', () => { currentIndex = (currentIndex + 1) % totalSlides; updateSlider(); });
-        window.addEventListener('resize', () => updateSlider());
-        updateSlider();
+        testPrev?.addEventListener('click', () => { testIndex = (testIndex - 1 + testTotal) % testTotal; updateTest(); });
+        testNext?.addEventListener('click', () => { testIndex = (testIndex + 1) % testTotal; updateTest(); });
+        window.addEventListener('resize', () => updateTest());
+        updateTest();
     }
 
-    // Fade-up animazione
+    // Fade-up
     const faders = document.querySelectorAll('.fade-up');
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); } });
     }, { threshold: 0.2 });
     faders.forEach(el => observer.observe(el));
 
-    document.addEventListener('DOMContentLoaded', initSlider);
+    document.addEventListener('DOMContentLoaded', () => {
+        initGallery();
+        initTest();
+    });
 </script>
 </body>
 </html>
