@@ -1,6 +1,6 @@
 # democliente2
 
-Landing page per servizio NCC.
+OSTERIA CORTE CASETTE
 
 ## Descrizione
 https://demolandingpage.github.io/democliente2/
