@@ -2,672 +2,529 @@
 <html lang="it">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Andrei NCC Roma | Transfer privati e aeroporto di lusso</title>
-    <meta name="description" content="NCC Roma con Andrei: transfer aeroporti FCO/CIA, viaggi business e tour privati. Mercedes premium, puntualità garantita. Preventivo WhatsApp.">
-    <meta name="keywords" content="NCC Roma, transfer privati Roma, chauffeur service Roma, NCC premium Roma, transfer business Roma, NCC aeroporto Fiumicino, NCC Ciampino">
-    <meta name="author" content="Andrei NCC Roma">
-    <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://tuodominio.com/">
-    <!-- Schema markup JSON-LD -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "LocalBusiness",
-      "name": "Andrei NCC Roma",
-      "description": "Servizio NCC di lusso a Roma: transfer aeroporti Fiumicino e Ciampino, hotel, stazioni, tour privati. Autista professionista, Mercedes premium, puntualità garantita.",
-      "image": "https://tuodominio.com/images/mercedes-bg.jpg",
-      "url": "https://tuodominio.com",
-      "telephone": "+393791234567",
-      "email": "andrei@nccroma.it",
-      "priceRange": "€€",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Roma",
-        "addressRegion": "RM",
-        "addressCountry": "IT"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": 41.9028,
-        "longitude": 12.4964
-      },
-      "openingHoursSpecification": {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
-        "opens": "00:00",
-        "closes": "23:59"
-      },
-      "serviceType": ["NCC aeroporto","transfer privati","chauffeur service","NCC premium","transfer business"]
-    }
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Osteria Corte Casette | San Martino Buon Albergo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#92400E',
+                        secondary: '#B45309',
+                        accent: '#78350F',
+                        warm: '#FEF3C7',
+                        dark: '#1F2937',
+                        light: '#FFFBEB'
+                    },
+                    fontFamily: {
+                        serif: ['Playfair Display', 'serif'],
+                        sans: ['Lato', 'sans-serif']
+                    }
+                }
+            }
+        }
     </script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        .hero-pattern {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1920');
+            background-size: cover;
+            background-position: center;
         }
-        body {
-            background-color: #0A0A0A;
-            color: #E0E0E0;
-            font-family: 'Inter', sans-serif;
-            line-height: 1.5;
+        .smooth-scroll {
             scroll-behavior: smooth;
-        }
-        h1, h2, h3, .logo {
-            font-family: 'Playfair Display', serif;
-            font-weight: 500;
-            letter-spacing: -0.01em;
-        }
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 24px;
-        }
-        section {
-            padding: 80px 0;
-        }
-        .section-dark {
-            background-color: #0A0A0A;
-        }
-        .section-gray {
-            background-color: #111111;
-        }
-        .gold-text {
-            color: #D4AF37;
-        }
-        .btn-gold {
-            background: #D4AF37;
-            color: #0A0A0A;
-            font-weight: 600;
-            transition: all 0.3s ease;
-        }
-        .btn-gold:hover {
-            background: #C5A028;
-            transform: translateY(-2px);
-        }
-        .btn-outline-gold {
-            background: transparent;
-            border: 1px solid #D4AF37;
-            color: #D4AF37;
-        }
-        .btn-outline-gold:hover {
-            background: #D4AF37;
-            color: #0A0A0A;
-        }
-        /* HERO con sfondo ben visibile (overlay più leggero) */
-        .hero {
-            position: relative;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            background: linear-gradient(135deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.4) 100%), url('images/mercedes-bg.jpg') center/cover no-repeat;
-        }
-        .hero .container {
-            position: relative;
-            z-index: 2;
-        }
-        .hero h1 {
-            font-size: 3.2rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            color: #FFFFFF;
-            text-shadow: 0 2px 5px rgba(0,0,0,0.3);
-        }
-        .hero p {
-            font-size: 1.25rem;
-            max-width: 600px;
-            margin-bottom: 2rem;
-            color: #F5F5F5;
-            text-shadow: 0 1px 2px rgba(0,0,0,0.2);
-        }
-        .hero-buttons {
-            display: flex;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-        .btn {
-            display: inline-block;
-            padding: 14px 36px;
-            border-radius: 60px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s;
-            font-size: 1rem;
-            text-align: center;
-        }
-        /* Servizi e features (invariati) */
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-        .service-card {
-            background: #1A1A1A;
-            border-radius: 24px;
-            padding: 2rem 1.5rem;
-            text-align: center;
-            transition: transform 0.3s;
-            border: 1px solid #2A2A2A;
-        }
-        .service-card:hover {
-            transform: translateY(-8px);
-            border-color: #D4AF37;
-        }
-        .service-card i {
-            font-size: 2.5rem;
-            color: #D4AF37;
-            margin-bottom: 1rem;
-        }
-        .service-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 0.75rem;
-            color: #FFFFFF;
-        }
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            margin: 2rem 0;
-        }
-        .feature-item {
-            text-align: center;
-        }
-        .feature-item i {
-            font-size: 2rem;
-            color: #D4AF37;
-            margin-bottom: 0.75rem;
-        }
-        /* Driver section migliorata */
-        .driver-section {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            gap: 3rem;
-            background: #111111;
-            border-radius: 32px;
-            padding: 2rem;
-        }
-        .driver-image {
-            flex: 1;
-            min-width: 200px;
-            text-align: center;
-        }
-        .driver-image img {
-            width: 100%;
-            max-width: 280px;
-            border-radius: 50%;
-            border: 4px solid #D4AF37;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-            object-fit: cover;
-            aspect-ratio: 1/1;
-        }
-        .driver-bio {
-            flex: 2;
-        }
-        .driver-bio h3 {
-            font-size: 2rem;
-            color: #D4AF37;
-            margin-bottom: 1rem;
-        }
-        /* Prezzi */
-        .prices-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 1.5rem;
-            margin: 2rem 0;
-        }
-        .price-card {
-            background: #1A1A1A;
-            border-radius: 20px;
-            padding: 1.5rem;
-            text-align: center;
-            border: 1px solid #2A2A2A;
-        }
-        .price-card h4 {
-            font-size: 1.3rem;
-            margin-bottom: 0.75rem;
-            color: #D4AF37;
-        }
-        .price-card .price {
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: white;
-            margin: 1rem 0;
-        }
-        /* Galleria carosello (nuova sezione) */
-        .gallery-section {
-            background: #0A0A0A;
-        }
-        .gallery-slider {
-            position: relative;
-            max-width: 1000px;
-            margin: 0 auto;
-            overflow: hidden;
-            border-radius: 24px;
-        }
-        .gallery-track {
-            display: flex;
-            transition: transform 0.5s ease;
-        }
-        .gallery-slide {
-            flex: 0 0 100%;
-            padding: 0 10px;
-        }
-        .gallery-slide img {
-            width: 100%;
-            height: 500px;
-            object-fit: cover;
-            border-radius: 24px;
-            border: 1px solid #D4AF37;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.4);
-        }
-        .gallery-btn {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background: rgba(212,175,55,0.7);
-            border: none;
-            color: white;
-            font-size: 1.8rem;
-            width: 44px;
-            height: 44px;
-            border-radius: 50%;
-            cursor: pointer;
-            z-index: 2;
-            transition: 0.2s;
-        }
-        .gallery-btn:hover {
-            background: #D4AF37;
-            color: #0A0A0A;
-        }
-        .gallery-prev {
-            left: 10px;
-        }
-        .gallery-next {
-            right: 10px;
-        }
-        .gallery-dots {
-            text-align: center;
-            margin-top: 20px;
-        }
-        .gallery-dot {
-            display: inline-block;
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            background: #444;
-            margin: 0 5px;
-            cursor: pointer;
-        }
-        .gallery-dot.active {
-            background: #D4AF37;
-        }
-        /* Carosello recensioni */
-        .testimonial-slider {
-            position: relative;
-            max-width: 900px;
-            margin: 0 auto;
-            overflow: hidden;
-            border-radius: 24px;
-        }
-        .testimonial-track {
-            display: flex;
-            transition: transform 0.5s ease;
-        }
-        .testimonial-card {
-            flex: 0 0 100%;
-            background: #1A1A1A;
-            border-radius: 24px;
-            padding: 2rem;
-            text-align: center;
-            border: 1px solid #2A2A2A;
-        }
-        .testimonial-card .stars {
-            color: #D4AF37;
-            font-size: 1.4rem;
-            margin-bottom: 1rem;
-        }
-        .testimonial-card p {
-            font-size: 1.1rem;
-            font-style: italic;
-            margin: 1rem 0;
-        }
-        .slider-btn {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background: rgba(212,175,55,0.6);
-            border: none;
-            color: white;
-            font-size: 1.8rem;
-            width: 44px;
-            height: 44px;
-            border-radius: 50%;
-            cursor: pointer;
-            z-index: 2;
-        }
-        .slider-btn:hover {
-            background: #D4AF37;
-            color: #0A0A0A;
-        }
-        .slider-prev { left: 10px; }
-        .slider-next { right: 10px; }
-        .dots {
-            text-align: center;
-            margin-top: 20px;
-        }
-        .dot {
-            display: inline-block;
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            background: #444;
-            margin: 0 5px;
-            cursor: pointer;
-        }
-        .dot.active {
-            background: #D4AF37;
-        }
-        /* CTA e footer */
-        .cta-final {
-            text-align: center;
-            background: linear-gradient(135deg, #D4AF37 0%, #B88F1A 100%);
-            border-radius: 40px;
-            padding: 3rem 2rem;
-            color: #0A0A0A;
-        }
-        .cta-final h2 {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-            color: #0A0A0A;
-        }
-        .btn-whatsapp {
-            background: #25D366;
-            color: white;
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            font-size: 1.3rem;
-            padding: 14px 32px;
-            border-radius: 60px;
-            text-decoration: none;
-            font-weight: 600;
-        }
-        .btn-whatsapp:hover {
-            background: #20B859;
-            transform: scale(1.02);
-        }
-        .footer {
-            background: #050505;
-            padding: 40px 0;
-            text-align: center;
-            border-top: 1px solid #222;
-            font-size: 0.9rem;
-        }
-        .footer a {
-            color: #D4AF37;
-            text-decoration: none;
-        }
-        .whatsapp-sticky {
-            position: fixed;
-            bottom: 24px;
-            right: 24px;
-            background: #25D366;
-            color: white;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2rem;
-            box-shadow: 0 6px 16px rgba(0,0,0,0.3);
-            z-index: 100;
-        }
-        .whatsapp-sticky:hover {
-            transform: scale(1.08);
-        }
-        @media (max-width: 768px) {
-            section { padding: 60px 0; }
-            .hero h1 { font-size: 2.2rem; }
-            .driver-section { flex-direction: column; text-align: center; }
-            .gallery-slide img { height: 300px; }
-            .btn { padding: 12px 24px; }
-        }
-        .fade-up {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.8s ease, transform 0.8s ease;
-        }
-        .fade-up.visible {
-            opacity: 1;
-            transform: translateY(0);
         }
     </style>
 </head>
-<body>
+<body class="font-sans text-gray-800 smooth-scroll">
 
-<!-- Sticky WhatsApp -->
-<a href="https://wa.me/393791234567?text=Salve%20Andrei%2C%20vorrei%20richiedere%20un%20preventivo" class="whatsapp-sticky" target="_blank" rel="noopener noreferrer" aria-label="Contatta su WhatsApp">
-    <i class="fab fa-whatsapp"></i>
-</a>
-
-<!-- Hero con sfondo del van (overlay ridotto per visibilità) -->
-<section class="hero">
-    <div class="container">
-        <div class="fade-up">
-            <h1>Transfer privati a Roma</h1>
-            <h1 style="font-size: 2rem; margin-top: -0.5rem; color: #D4AF37;">Comfort, puntualità e zero stress</h1>
-            <p>Viaggia con stile e sicurezza. Servizio NCC esclusivo a Roma: aeroporti, hotel, stazioni, tour privati.</p>
-            <div class="hero-buttons">
-                <a href="#prenota" class="btn btn-gold">Prenota ora</a>
-                <a href="https://wa.me/393791234567?text=Richiedo%20preventivo" target="_blank" class="btn btn-outline-gold">Richiedi preventivo WhatsApp</a>
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white/95 backdrop-blur-sm shadow-md z-50 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0 flex items-center">
+                    <h1 class="font-serif text-2xl font-bold text-primary">OSTERIA CORTE CASETTE</h1>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#home" class="text-gray-700 hover:text-primary px-3 py-2 rounded-md text-sm font-medium transition">Home</a>
+                        <a href="#about" class="text-gray-700 hover:text-primary px-3 py-2 rounded-md text-sm font-medium transition">La Nostra Storia</a>
+                        <a href="#menu" class="text-gray-700 hover:text-primary px-3 py-2 rounded-md text-sm font-medium transition">Menu</a>
+                        <a href="#gallery" class="text-gray-700 hover:text-primary px-3 py-2 rounded-md text-sm font-medium transition">Galleria</a>
+                        <a href="#contact" class="bg-primary text-white px-6 py-2 rounded-full text-sm font-medium hover:bg-amber-800 transition">Prenota</a>
+                    </div>
+                </div>
+                <div class="md:hidden">
+                    <button onclick="toggleMenu()" class="text-gray-700 hover:text-primary">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
             </div>
         </div>
-    </div>
-</section>
-
-<!-- Servizi -->
-<section id="servizi" class="section-gray">
-    <div class="container">
-        <h2 class="fade-up" style="text-align: center; color: #D4AF37; margin-bottom: 1rem;">Servizi esclusivi NCC</h2>
-        <p class="fade-up" style="text-align: center; max-width: 700px; margin: 0 auto 2rem;">Ogni transfer è pensato per garantirti la massima comodità e puntualità.</p>
-        <div class="services-grid">
-            <div class="service-card fade-up"><i class="fas fa-plane-departure"></i><h3>Transfer Aeroporti</h3><p>Fiumicino e Ciampino. Accoglienza con cartello, monitoraggio volo.</p><div class="gold-text">✔️ Puntuale</div></div>
-            <div class="service-card fade-up"><i class="fas fa-hotel"></i><h3>Transfer Hotel & Città</h3><p>Spostamenti rapidi in centro, stazioni, qualsiasi indirizzo.</p><div class="gold-text">✔️ Porta a porta</div></div>
-            <div class="service-card fade-up"><i class="fas fa-briefcase"></i><h3>Servizio Business</h3><p>Per riunioni, fiere e clienti executive. Wi-Fi, acqua.</p><div class="gold-text">✔️ Discrezione</div></div>
-            <div class="service-card fade-up"><i class="fas fa-map-marked-alt"></i><h3>Tour Personalizzati</h3><p>Castelli Romani, Civitavecchia, escursioni su misura.</p><div class="gold-text">✔️ Autista esperto</div></div>
-        </div>
-    </div>
-</section>
-
-<!-- Perché scegliere Andrei -->
-<section class="section-dark">
-    <div class="container">
-        <h2 class="fade-up" style="text-align: center; color: #D4AF37;">Perché scegliere Andrei NCC</h2>
-        <div class="features-grid">
-            <div class="feature-item fade-up"><i class="fas fa-door-open"></i><h4>Porta a porta</h4><p>Prelievo e destinazione ovunque</p></div>
-            <div class="feature-item fade-up"><i class="fas fa-clock"></i><h4>Disponibilità H24</h4><p>Prenotazioni notturne e voli ritardati</p></div>
-            <div class="feature-item fade-up"><i class="fas fa-car-side"></i><h4>Veicolo premium</h4><p>Mercedes Classe V, spaziosa e confortevole</p></div>
-            <div class="feature-item fade-up"><i class="fas fa-user-tie"></i><h4>Autista professionale</h4><p>Andrei, esperienza e affidabilità</p></div>
-            <div class="feature-item fade-up"><i class="fas fa-map-marked-alt"></i><h4>Accesso ZTL</h4><p>Transito autorizzato in centro</p></div>
-        </div>
-    </div>
-</section>
-
-<!-- NUOVA GALLERIA IMMAGINI DEL VAN (carosello) -->
-<section class="gallery-section">
-    <div class="container">
-        <h2 class="fade-up" style="text-align: center; color: #D4AF37;">La nostra flotta</h2>
-        <p class="fade-up" style="text-align: center; margin-bottom: 2rem;">Mercedes Classe V – Spazio, eleganza e tecnologia per i tuoi viaggi</p>
-        <div class="gallery-slider fade-up">
-            <button class="gallery-btn gallery-prev" id="galleryPrev"><i class="fas fa-chevron-left"></i></button>
-            <div class="gallery-track" id="galleryTrack">
-                <div class="gallery-slide"><img src="images/van1.jpg" alt="Mercedes NCC Roma - esterno" loading="lazy"></div>
-                <div class="gallery-slide"><img src="images/van2.jpg" alt="Interno Mercedes Classe V - Sedili premium" loading="lazy"></div>
-                <div class="gallery-slide"><img src="images/van3.jpg" alt="Bagagliaio spazioso" loading="lazy"></div>
-                <div class="gallery-slide"><img src="images/van4.jpg" alt="Mercedes in strada" loading="lazy"></div>
-            </div>
-            <button class="gallery-btn gallery-next" id="galleryNext"><i class="fas fa-chevron-right"></i></button>
-        </div>
-        <div class="gallery-dots" id="galleryDots"></div>
-        <p class="fade-up" style="text-align: center; margin-top: 1rem; font-size: 0.9rem;">*Immagini di esempio – sostituisci con le tue foto nella cartella images/</p>
-    </div>
-</section>
-
-<!-- Driver (Andrei) con immagine ben visibile -->
-<section class="section-gray">
-    <div class="container">
-        <div class="driver-section fade-up">
-            <div class="driver-image">
-                <img src="images/andrei.jpg" alt="Andrei, autista NCC professionista a Roma" loading="lazy">
-            </div>
-            <div class="driver-bio">
-                <h3>Andrei</h3>
-                <p>«Mi chiamo Andrei, sono un autista NCC con anni di esperienza sulle strade di Roma. Il mio obiettivo è offrirti un servizio impeccabile: puntuale, discreto e rilassante. Ogni corsa è un'opportunità per rendere il tuo viaggio piacevole e senza pensieri. Affidati a me per i tuoi transfer, garantisco professionalità e massimo comfort a bordo della mia Mercedes.»</p>
+        <!-- Mobile menu -->
+        <div class="hidden md:hidden bg-white" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#home" class="text-gray-700 hover:text-primary block px-3 py-2 rounded-md text-base font-medium">Home</a>
+                <a href="#about" class="text-gray-700 hover:text-primary block px-3 py-2 rounded-md text-base font-medium">La Nostra Storia</a>
+                <a href="#menu" class="text-gray-700 hover:text-primary block px-3 py-2 rounded-md text-base font-medium">Menu</a>
+                <a href="#contact" class="text-primary font-bold block px-3 py-2 rounded-md text-base font-medium">Prenota</a>
             </div>
         </div>
-    </div>
-</section>
+    </nav>
 
-<!-- Prezzi -->
-<section id="prezzi" class="section-dark">
-    <div class="container">
-        <h2 class="fade-up" style="text-align: center; color: #D4AF37;">Tratte frequenti – Prezzi indicativi</h2>
-        <p class="fade-up" style="text-align: center; margin-bottom: 2rem;">Costo fisso, senza sorprese.</p>
-        <div class="prices-grid">
-            <div class="price-card fade-up"><h4>Roma centro → Fiumicino (FCO)</h4><div class="price">€ 55 <small>*</small></div><p>Monitoraggio volo, bagagli inclusi</p></div>
-            <div class="price-card fade-up"><h4>Roma centro → Ciampino (CIA)</h4><div class="price">€ 45 <small>*</small></div><p>Puntualità garantita</p></div>
-            <div class="price-card fade-up"><h4>Roma → Porto Civitavecchia</h4><div class="price">€ 110 <small>*</small></div><p>Transfer crocieristi, attesa inclusa</p></div>
-            <div class="price-card fade-up"><h4>Tour privato (3h)</h4><div class="price">€ 150 <small>*</small></div><p>Itinerario personalizzato</p></div>
-        </div>
-        <p class="fade-up" style="text-align: center; font-size: 0.85rem;">*Prezzi IVA inclusa. Richiedi preventivo per percorsi personalizzati.</p>
-    </div>
-</section>
-
-<!-- Recensioni (carosello) -->
-<section class="testimonials-section">
-    <div class="container">
-        <h2 class="fade-up" style="text-align: center; color: #D4AF37;">Cosa dicono i nostri clienti</h2>
-        <p class="fade-up" style="text-align: center; margin-bottom: 2rem;">Oltre 150 recensioni a 5 stelle su Trustpilot</p>
-        <div class="testimonial-slider fade-up">
-            <button class="slider-btn slider-prev" id="testPrev"><i class="fas fa-chevron-left"></i></button>
-            <div class="testimonial-track" id="testTrack">
-                <div class="testimonial-card"><div class="stars">★★★★★</div><p>"Servizio impeccabile. Andrei puntuale, macchina impeccabile. Consigliatissimo!"</p><h4>— Laura M.</h4><small><i class="fab fa-trustpilot"></i> Trustpilot</small></div>
-                <div class="testimonial-card"><div class="stars">★★★★★</div><p>"Transfer business da Roma a Fiera Roma. Autista professionale, Mercedes confortevole."</p><h4>— Marco R.</h4><small><i class="fab fa-trustpilot"></i> Trustpilot</small></div>
-                <div class="testimonial-card"><div class="stars">★★★★★</div><p>"Prenotato all'ultimo minuto per Ciampino. Gentile, disponibile e puntuale."</p><h4>— Sofia L.</h4><small><i class="fab fa-trustpilot"></i> Trustpilot</small></div>
+    <!-- Hero Section -->
+    <section id="home" class="hero-pattern h-screen flex items-center justify-center relative">
+        <div class="text-center text-white px-4 max-w-4xl mx-auto">
+            <p class="text-lg md:text-xl mb-4 font-light italic text-amber-200">Tradizione e sapori autentici</p>
+            <h1 class="font-serif text-5xl md:text-7xl font-bold mb-6 leading-tight">
+                Osteria<br>
+                <span class="text-amber-400">Corte Casette</span>
+            </h1>
+            <p class="text-xl md:text-2xl mb-8 font-light">
+                Dove la tradizione incontra il gusto
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#contact" class="bg-primary hover:bg-amber-800 text-white px-8 py-4 rounded-full text-lg font-semibold transition transform hover:scale-105 shadow-lg">
+                    Prenota un Tavolo
+                </a>
+                <a href="#menu" class="bg-white hover:bg-gray-100 text-dark px-8 py-4 rounded-full text-lg font-semibold transition transform hover:scale-105 shadow-lg">
+                    Scopri il Menu
+                </a>
             </div>
-            <button class="slider-btn slider-next" id="testNext"><i class="fas fa-chevron-right"></i></button>
+            <div class="mt-12 flex justify-center items-center space-x-8 text-sm">
+                <div class="flex items-center">
+                    <svg class="w-5 h-5 mr-2 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                    </svg>
+                    <span>4.5 su Google</span>
+                </div>
+                <div class="flex items-center">
+                    <svg class="w-5 h-5 mr-2 text-amber-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <span>Aperto dalle 6:30</span>
+                </div>
+            </div>
         </div>
-        <div class="dots" id="testDots"></div>
-        <div style="text-align: center; margin-top: 30px;"><a href="#" style="color: #D4AF37; text-decoration: underline;">Leggi tutte su Trustpilot →</a></div>
-    </div>
-</section>
-
-<!-- CTA -->
-<section id="prenota" class="section-gray">
-    <div class="container">
-        <div class="cta-final fade-up">
-            <h2>Pronto per un transfer senza stress?</h2>
-            <p style="font-size: 1.2rem; margin-bottom: 1.5rem;">Scrivimi ora su WhatsApp, riceverai subito un preventivo chiaro e senza impegno.</p>
-            <a href="https://wa.me/393791234567?text=Salve%20Andrei" target="_blank" class="btn-whatsapp"><i class="fab fa-whatsapp"></i> Scrivimi su WhatsApp</a>
-            <p style="margin-top: 1rem;">📞 <a href="tel:+393791234567" style="color:#0A0A0A; text-decoration: underline; font-weight: bold;">+39 379 123 4567</a></p>
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+            </svg>
         </div>
-    </div>
-</section>
+    </section>
 
-<footer class="footer">
-    <div class="container">
-        <p><strong>Andrei NCC Roma</strong> – P.IVA 1234567890</p>
-        <p>Zona operativa: Roma e provincia (Aeroporti FCO/CIA, Centro, Stazioni, Porto Civitavecchia)</p>
-        <p>📞 <a href="tel:+393791234567">+39 379 123 4567</a> | 📧 <a href="mailto:andrei@nccroma.it">andrei@nccroma.it</a></p>
-        <p>Servizio H24 – Su prenotazione</p>
-        <p>© 2025 Andrei NCC – Transfer di lusso a Roma</p>
-    </div>
-</footer>
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-light">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="font-serif text-4xl font-bold text-dark mb-6">Un'Angolo di Tradizione</h2>
+                    <p class="text-gray-700 mb-6 text-lg leading-relaxed">
+                        Benvenuti all'Osteria Corte Casette, dove la cucina tradizionale veronese prende vita in un'atmosfera calda e accogliente. 
+                    </p>
+                    <p class="text-gray-700 mb-8 text-lg leading-relaxed">
+                        La nostra osteria è il luogo perfetto per gustare piatti della tradizione preparati con ingredienti freschi e di qualità, accompagnati da un'ottima selezione di vini locali. Un ambiente rustico e familiare vi farà sentire come a casa.
+                    </p>
+                    <div class="grid grid-cols-2 gap-6">
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
+                                <svg class="w-6 h-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                                </svg>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="font-bold text-dark">Cucina Tradizionale</h3>
+                                <p class="text-sm text-gray-600">Ricette autentiche</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 w-12 h-12 bg-secondary/10 rounded-full flex items-center justify-center">
+                                <svg class="w-6 h-6 text-secondary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                                </svg>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="font-bold text-dark">Ambiente Rustico</h3>
+                                <p class="text-sm text-gray-600">Atmosfera accogliente</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 w-12 h-12 bg-amber-600/10 rounded-full flex items-center justify-center">
+                                <svg class="w-6 h-6 text-amber-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="font-bold text-dark">Orari Flessibili</h3>
+                                <p class="text-sm text-gray-600">Dalla colazione alla notte</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 w-12 h-12 bg-red-900/10 rounded-full flex items-center justify-center">
+                                <svg class="w-6 h-6 text-red-900" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="font-bold text-dark">Vini Selezionati</h3>
+                                <p class="text-sm text-gray-600">Etichette locali</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative">
+                    <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?w=800" alt="Interno osteria" class="rounded-lg shadow-2xl">
+                    <div class="absolute -bottom-6 -right-6 bg-primary text-white p-6 rounded-lg shadow-xl hidden md:block">
+                        <p class="font-serif text-3xl font-bold">4.5★</p>
+                        <p class="text-sm">Recensioni eccellenti</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<script>
-    // Galleria immagini
-    const galleryTrack = document.getElementById('galleryTrack');
-    const galleryPrev = document.getElementById('galleryPrev');
-    const galleryNext = document.getElementById('galleryNext');
-    const galleryDots = document.getElementById('galleryDots');
-    let galleryIndex = 0;
-    let galleryTotal = 0;
+    <!-- Services/Menu Section -->
+    <section id="menu" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="font-serif text-4xl font-bold text-dark mb-4">Le Nostre Specialità</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Piatti della tradizione veronese e italiana preparati con passione e ingredienti freschi</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Primi Piatti -->
+                <div class="group relative overflow-hidden rounded-lg shadow-lg cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1612874742237-6526221588e3?w=600" alt="Primi Piatti" class="w-full h-96 object-cover transition transform group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex flex-col justify-end p-6">
+                        <h3 class="font-serif text-2xl font-bold text-white mb-2">Primi Piatti</h3>
+                        <p class="text-gray-200 text-sm mb-4">Pasta fresca fatta in casa, risotti e zuppe della tradizione</p>
+                        <span class="text-amber-400 font-semibold">Scopri di più →</span>
+                    </div>
+                </div>
 
-    function updateGallery() {
-        if (!galleryTrack) return;
-        const slideWidth = galleryTrack.children[0].clientWidth;
-        galleryTrack.style.transform = `translateX(-${galleryIndex * slideWidth}px)`;
-        Array.from(galleryDots.children).forEach((dot, i) => dot.classList.toggle('active', i === galleryIndex));
-    }
+                <!-- Secondi -->
+                <div class="group relative overflow-hidden rounded-lg shadow-lg cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1600891964092-4316c288032e?w=600" alt="Secondi Piatti" class="w-full h-96 object-cover transition transform group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex flex-col justify-end p-6">
+                        <h3 class="font-serif text-2xl font-bold text-white mb-2">Secondi Piatti</h3>
+                        <p class="text-gray-200 text-sm mb-4">Carni alla griglia, brasati e specialità di carne</p>
+                        <span class="text-amber-400 font-semibold">Scopri di più →</span>
+                    </div>
+                </div>
 
-    function initGallery() {
-        if (!galleryTrack) return;
-        galleryTotal = galleryTrack.children.length;
-        if (galleryTotal === 0) return;
-        galleryDots.innerHTML = '';
-        for (let i = 0; i < galleryTotal; i++) {
-            const dot = document.createElement('span');
-            dot.classList.add('gallery-dot');
-            if (i === 0) dot.classList.add('active');
-            dot.addEventListener('click', () => { galleryIndex = i; updateGallery(); });
-            galleryDots.appendChild(dot);
+                <!-- Antipasti -->
+                <div class="group relative overflow-hidden rounded-lg shadow-lg cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1541529086526-db283c563270?w=600" alt="Antipasti" class="w-full h-96 object-cover transition transform group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex flex-col justify-end p-6">
+                        <h3 class="font-serif text-2xl font-bold text-white mb-2">Antipasti</h3>
+                        <p class="text-gray-200 text-sm mb-4">Taglieri di salumi e formaggi, bruschette e stuzzicherie</p>
+                        <span class="text-amber-400 font-semibold">Scopri di più →</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Additional Info -->
+            <div class="mt-16 bg-warm rounded-2xl p-8 md:p-12">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                    <div>
+                        <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-8 h-8 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                        </div>
+                        <h4 class="font-bold text-dark mb-2">Colazione</h4>
+                        <p class="text-gray-700 text-sm">Dalle 6:30 - Caffè e cornetti</p>
+                    </div>
+                    <div>
+                        <div class="w-16 h-16 bg-secondary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-8 h-8 text-secondary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                        </div>
+                        <h4 class="font-bold text-dark mb-2">Pranzo</h4>
+                        <p class="text-gray-700 text-sm">Piatti della tradizione</p>
+                    </div>
+                    <div>
+                        <div class="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-8 h-8 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                        </div>
+                        <h4 class="font-bold text-dark mb-2">Cena</h4>
+                        <p class="text-gray-700 text-sm">Fino a mezzanotte</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-20 bg-light">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="font-serif text-4xl font-bold text-dark mb-4">Galleria</h2>
+                <p class="text-gray-600">Scopri la nostra osteria e i nostri piatti</p>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="col-span-2 row-span-2">
+                    <img src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?w=800" alt="Osteria" class="w-full h-full object-cover rounded-lg shadow-md hover:shadow-xl transition">
+                </div>
+                <div>
+                    <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?w=400" alt="Piatto tipico" class="w-full h-48 object-cover rounded-lg shadow-md hover:shadow-xl transition">
+                </div>
+                <div>
+                    <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=400" alt="Carne" class="w-full h-48 object-cover rounded-lg shadow-md hover:shadow-xl transition">
+                </div>
+                <div>
+                    <img src="https://images.unsplash.com/photo-1550966871-3ed3c47e2ce2?w=400" alt="Vino" class="w-full h-48 object-cover rounded-lg shadow-md hover:shadow-xl transition">
+                </div>
+                <div>
+                    <img src="https://images.unsplash.com/photo-1551218808-94e220e084d2?w=400" alt="Ambiente" class="w-full h-48 object-cover rounded-lg shadow-md hover:shadow-xl transition">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="font-serif text-4xl font-bold text-dark mb-4">Cosa Dicono di Noi</h2>
+                <div class="flex justify-center items-center mb-4">
+                    <div class="flex text-yellow-400">
+                        ★★★★★
+                    </div>
+                    <span class="ml-2 text-gray-600">4.5 su Google</span>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-light p-8 rounded-lg shadow-md">
+                    <div class="flex text-yellow-400 mb-4">★★★★★</div>
+                    <p class="text-gray-600 mb-4">"Osteria autentica con piatti della tradizione preparati benissimo. Ambiente rustico e accogliente. Consigliatissimo!"</p>
+                    <div class="flex items-center">
+                        <div class="w-10 h-10 bg-primary rounded-full flex items-center justify-center text-white font-bold">A</div>
+                        <div class="ml-3">
+                            <p class="font-semibold text-dark">Andrea M.</p>
+                            <p class="text-sm text-gray-500">Cliente affezionato</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-light p-8 rounded-lg shadow-md">
+                    <div class="flex text-yellow-400 mb-4">★★★★★</div>
+                    <p class="text-gray-600 mb-4">"Posto fantastico per mangiare bene spendendo il giusto. La carne è eccellente e il personale molto gentile."</p>
+                    <div class="flex items-center">
+                        <div class="w-10 h-10 bg-secondary rounded-full flex items-center justify-center text-white font-bold">S</div>
+                        <div class="ml-3">
+                            <p class="font-semibold text-dark">Silvia P.</p>
+                            <p class="text-sm text-gray-500">Recensione Google</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-light p-8 rounded-lg shadow-md">
+                    <div class="flex text-yellow-400 mb-4">★★★★★</div>
+                    <p class="text-gray-600 mb-4">"Un'osteria come si deve! Piatti abbondanti e saporiti, ottimi i vini locali. Torneremo sicuramente."</p>
+                    <div class="flex items-center">
+                        <div class="w-10 h-10 bg-amber-600 rounded-full flex items-center justify-center text-white font-bold">F</div>
+                        <div class="ml-3">
+                            <p class="font-semibold text-dark">Francesco L.</p>
+                            <p class="text-sm text-gray-500">Cliente locale</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-dark text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div>
+                    <h2 class="font-serif text-4xl font-bold mb-6">Prenota il Tuo Tavolo</h2>
+                    <p class="text-gray-300 mb-8">Compila il form o chiamaci per prenotare. Ti aspettiamo per un'esperienza gastronomica indimenticabile!</p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <svg class="w-6 h-6 text-amber-400 mt-1 mr-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                            </svg>
+                            <div>
+                                <h4 class="font-bold mb-1">Indirizzo</h4>
+                                <p class="text-gray-300">Via Feniletto, 11<br>37036 San Martino Buon Albergo VR</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <svg class="w-6 h-6 text-amber-400 mt-1 mr-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                            </svg>
+                            <div>
+                                <h4 class="font-bold mb-1">Telefono</h4>
+                                <p class="text-gray-300">+39 342 701 0184</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <svg class="w-6 h-6 text-amber-400 mt-1 mr-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                            <div>
+                                <h4 class="font-bold mb-1">Orari di Apertura</h4>
+                                <p class="text-gray-300">Martedì - Domenica: 6:30 - 00:00<br>Lunedì: Chiuso</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-8">
+                        <a href="https://maps.google.com/?q=Via+Feniletto,+11,+37036+San+Martino+Buon+Albergo+VR" target="_blank" class="inline-flex items-center bg-primary hover:bg-amber-800 text-white px-6 py-3 rounded-full transition">
+                            <svg class="w-5 h-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
+                            </svg>
+                            Come Arrivare
+                        </a>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg p-8 text-gray-800">
+                    <form onsubmit="handleSubmit(event)" class="space-y-6">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Nome e Cognome</label>
+                            <input type="text" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition" placeholder="Mario Rossi">
+                        </div>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Telefono</label>
+                                <input type="tel" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition" placeholder="+39 123 456 7890">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Numero Persone</label>
+                                <select required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition">
+                                    <option value="">Seleziona</option>
+                                    <option value="1">1 persona</option>
+                                    <option value="2">2 persone</option>
+                                    <option value="3">3 persone</option>
+                                    <option value="4">4 persone</option>
+                                    <option value="5">5 persone</option>
+                                    <option value="6">6+ persone</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Data</label>
+                                <input type="date" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Orario</label>
+                                <select required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition">
+                                    <option value="">Seleziona</option>
+                                    <option value="12:00">12:00</option>
+                                    <option value="12:30">12:30</option>
+                                    <option value="13:00">13:00</option>
+                                    <option value="13:30">13:30</option>
+                                    <option value="19:00">19:00</option>
+                                    <option value="19:30">19:30</option>
+                                    <option value="20:00">20:00</option>
+                                    <option value="20:30">20:30</option>
+                                    <option value="21:00">21:00</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Note Speciali</label>
+                            <textarea rows="3" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition" placeholder="Allergie, richieste speciali..."></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full bg-primary hover:bg-amber-800 text-white font-bold py-4 rounded-lg transition transform hover:scale-[1.02]">
+                            Invia Prenotazione
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+                <div>
+                    <h3 class="font-serif text-2xl font-bold mb-4">OSTERIA CORTE CASETTE</h3>
+                    <p class="text-gray-400 text-sm">Tradizione e sapori autentici nel cuore di San Martino Buon Albergo. Un'osteria dove sentirsi a casa.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Link Rapidi</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="#home" class="hover:text-white transition">Home</a></li>
+                        <li><a href="#about" class="hover:text-white transition">La Nostra Storia</a></li>
+                        <li><a href="#menu" class="hover:text-white transition">Menu</a></li>
+                        <li><a href="#contact" class="hover:text-white transition">Prenotazioni</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Contatti</h4>
+                    <p class="text-gray-400 text-sm mb-2">Via Feniletto, 11<br>37036 San Martino Buon Albergo VR</p>
+                    <p class="text-gray-400 text-sm">Tel: +39 342 701 0184</p>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8 text-center text-sm text-gray-400">
+                <p>&copy; 2024 Osteria Corte Casette. Tutti i diritti riservati.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        function toggleMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
         }
-        galleryPrev?.addEventListener('click', () => { galleryIndex = (galleryIndex - 1 + galleryTotal) % galleryTotal; updateGallery(); });
-        galleryNext?.addEventListener('click', () => { galleryIndex = (galleryIndex + 1) % galleryTotal; updateGallery(); });
-        window.addEventListener('resize', () => updateGallery());
-        updateGallery();
-    }
 
-    // Recensioni
-    const testTrack = document.getElementById('testTrack');
-    const testPrev = document.getElementById('testPrev');
-    const testNext = document.getElementById('testNext');
-    const testDots = document.getElementById('testDots');
-    let testIndex = 0;
-    let testTotal = 0;
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('shadow-lg');
+            } else {
+                navbar.classList.remove('shadow-lg');
+            }
+        });
 
-    function updateTest() {
-        if (!testTrack) return;
-        const slideWidth = testTrack.children[0].clientWidth;
-        testTrack.style.transform = `translateX(-${testIndex * slideWidth}px)`;
-        Array.from(testDots.children).forEach((dot, i) => dot.classList.toggle('active', i === testIndex));
-    }
-
-    function initTest() {
-        if (!testTrack) return;
-        testTotal = testTrack.children.length;
-        if (testTotal === 0) return;
-        testDots.innerHTML = '';
-        for (let i = 0; i < testTotal; i++) {
-            const dot = document.createElement('span');
-            dot.classList.add('dot');
-            if (i === 0) dot.classList.add('active');
-            dot.addEventListener('click', () => { testIndex = i; updateTest(); });
-            testDots.appendChild(dot);
+        // Form submission
+        function handleSubmit(e) {
+            e.preventDefault();
+            alert('Grazie per la prenotazione! Ti contatteremo presto per confermare.');
+            e.target.reset();
         }
-        testPrev?.addEventListener('click', () => { testIndex = (testIndex - 1 + testTotal) % testTotal; updateTest(); });
-        testNext?.addEventListener('click', () => { testIndex = (testIndex + 1) % testTotal; updateTest(); });
-        window.addEventListener('resize', () => updateTest());
-        updateTest();
-    }
 
-    // Fade-up
-    const faders = document.querySelectorAll('.fade-up');
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); } });
-    }, { threshold: 0.2 });
-    faders.forEach(el => observer.observe(el));
-
-    document.addEventListener('DOMContentLoaded', () => {
-        initGallery();
-        initTest();
-    });
-</script>
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    // Close mobile menu if open
+                    document.getElementById('mobile-menu').classList.add('hidden');
+                }
+            });
+        });
+    </script>
 </body>
 </html>
