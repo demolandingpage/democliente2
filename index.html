@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Osteria Corte Casette - Tradizione e sapori autentici a San Martino Buon Albergo. Prenota il tuo tavolo online.">
+    <meta name="description" content="Osteria Corte Casette - Tradizione e sapori autentici a San Martino Buon Albergo.">
     <title>Osteria Corte Casette | San Martino Buon Albergo</title>
     
     <!-- Tailwind CSS -->
@@ -14,6 +14,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
     
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
     <!-- Tailwind Config -->
     <script>
         tailwind.config = {
@@ -36,37 +39,31 @@
         }
     </script>
     
-    <!-- Google Reviews Widget - Elfsight -->
-    <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
-    
     <style>
+        /* Hero Background */
         .hero-pattern {
-            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1920');
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/hero/hero-bg.jpg');
             background-size: cover;
             background-position: center;
         }
-        .smooth-scroll {
-            scroll-behavior: smooth;
-        }
-        .google-badge {
-            background: linear-gradient(135deg, #4285F4 0%, #34A853 100%);
-        }
-        .nav-link {
-            position: relative;
-        }
+        .smooth-scroll { scroll-behavior: smooth; }
+        .google-badge { background: linear-gradient(135deg, #4285F4 0%, #34A853 100%); }
+        
+        /* Nav Link Animation */
+        .nav-link { position: relative; }
         .nav-link::after {
-            content: '';
-            position: absolute;
-            bottom: -4px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: #92400E;
-            transition: width 0.3s ease;
+            content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 2px;
+            background: #92400E; transition: width 0.3s ease;
         }
-        .nav-link:hover::after {
-            width: 100%;
-        }
+        .nav-link:hover::after { width: 100%; }
+
+        /* Swiper Styles */
+        .swiper { width: 100%; height: 100%; }
+        .swiper-slide { display: flex; justify-content: center; align-items: center; }
+        .swiper-button-next, .swiper-button-prev { color: white !important; }
+        .swiper-button-next:after, .swiper-button-prev:after { font-size: 20px !important; font-weight: bold !important; }
+        .swiper-pagination-bullet { background: white !important; opacity: 0.7 !important; }
+        .swiper-pagination-bullet-active { opacity: 1 !important; background: #92400E !important; }
     </style>
 </head>
 <body class="font-sans text-gray-800 smooth-scroll">
@@ -81,29 +78,28 @@
                 <div class="hidden md:block">
                     <div class="ml-10 flex items-baseline space-x-8">
                         <a href="#home" class="nav-link text-gray-700 hover:text-primary px-3 py-2 rounded-md text-sm font-medium transition">Home</a>
-                        <a href="#about" class="nav-link text-gray-700 hover:text-primary px-3 py-2 rounded-md text-sm font-medium transition">La Nostra Storia</a>
+                        <a href="#about" class="nav-link text-gray-700 hover:text-primary px-3 py-2 rounded-md text-sm font-medium transition">Chi Siamo</a>
                         <a href="#reviews" class="nav-link text-gray-700 hover:text-primary px-3 py-2 rounded-md text-sm font-medium transition">Recensioni</a>
                         <a href="#menu" class="nav-link text-gray-700 hover:text-primary px-3 py-2 rounded-md text-sm font-medium transition">Menu</a>
+                        <a href="#gallery" class="nav-link text-gray-700 hover:text-primary px-3 py-2 rounded-md text-sm font-medium transition">Galleria</a>
                         <a href="#contact" class="bg-primary text-white px-6 py-2 rounded-full text-sm font-medium hover:bg-amber-800 transition shadow-md">Prenota</a>
                     </div>
                 </div>
                 <div class="md:hidden">
-                    <button onclick="toggleMenu()" class="text-gray-700 hover:text-primary p-2" aria-label="Menu">
-                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                        </svg>
+                    <button onclick="toggleMenu()" class="text-gray-700 hover:text-primary p-2">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg>
                     </button>
                 </div>
             </div>
         </div>
-        <!-- Mobile menu -->
         <div class="hidden md:hidden bg-white border-t" id="mobile-menu">
             <div class="px-4 pt-2 pb-4 space-y-1">
                 <a href="#home" class="text-gray-700 hover:text-primary block px-3 py-3 rounded-md text-base font-medium">Home</a>
-                <a href="#about" class="text-gray-700 hover:text-primary block px-3 py-3 rounded-md text-base font-medium">La Nostra Storia</a>
+                <a href="#about" class="text-gray-700 hover:text-primary block px-3 py-3 rounded-md text-base font-medium">Chi Siamo</a>
                 <a href="#reviews" class="text-gray-700 hover:text-primary block px-3 py-3 rounded-md text-base font-medium">Recensioni</a>
                 <a href="#menu" class="text-gray-700 hover:text-primary block px-3 py-3 rounded-md text-base font-medium">Menu</a>
-                <a href="#contact" class="text-primary font-bold block px-3 py-3 rounded-md text-base font-medium">Prenota un Tavolo</a>
+                <a href="#gallery" class="text-gray-700 hover:text-primary block px-3 py-3 rounded-md text-base font-medium">Galleria</a>
+                <a href="#contact" class="text-primary font-bold block px-3 py-3 rounded-md text-base font-medium">Prenota</a>
             </div>
         </div>
     </nav>
@@ -113,45 +109,29 @@
         <div class="text-center text-white px-4 max-w-4xl mx-auto pt-20">
             <p class="text-lg md:text-xl mb-4 font-light italic text-amber-200">Tradizione e sapori autentici</p>
             <h1 class="font-serif text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
-                Osteria<br>
-                <span class="text-amber-400">Corte Casette</span>
+                Osteria<br><span class="text-amber-400">Corte Casette</span>
             </h1>
             <p class="text-lg md:text-xl lg:text-2xl mb-8 font-light max-w-2xl mx-auto">
                 Dove la tradizione veronese incontra il gusto autentico
             </p>
-            
-            <!-- Google Reviews Badge - Clickable -->
-            <a href="https://g.co/kgs/5TBx82z" target="_blank" rel="noopener noreferrer" 
-               class="mb-8 inline-flex items-center google-badge text-white px-5 py-3 rounded-full shadow-lg cursor-pointer hover:shadow-xl transition transform hover:scale-105">
-                <svg class="w-5 h-5 md:w-6 md:h-6 mr-3" viewBox="0 0 24 24" fill="white">
-                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
-                </svg>
+            <a href="https://g.co/kgs/5TBx82z" target="_blank" class="mb-8 inline-flex items-center google-badge text-white px-5 py-3 rounded-full shadow-lg hover:shadow-xl transition transform hover:scale-105">
+                <svg class="w-5 h-5 mr-3" viewBox="0 0 24 24" fill="white"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
                 <div class="text-left">
-                    <div class="flex items-center">
-                        <span class="text-yellow-300 font-bold text-sm md:text-lg">★★★★★</span>
-                        <span class="ml-2 font-bold text-lg md:text-xl">4.5</span>
-                    </div>
-                    <p class="text-xs md:text-sm opacity-90">Su Google • 100+ recensioni</p>
+                    <div class="flex items-center"><span class="text-yellow-300 font-bold">★★★★★</span><span class="ml-2 font-bold text-lg">4.5</span></div>
+                    <p class="text-xs opacity-90">Su Google • 100+ recensioni</p>
                 </div>
             </a>
-            
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="#contact" class="bg-primary hover:bg-amber-800 text-white px-8 py-4 rounded-full text-lg font-semibold transition transform hover:scale-105 shadow-lg">
-                    Prenota un Tavolo
-                </a>
-                <a href="#reviews" class="bg-white hover:bg-gray-100 text-dark px-8 py-4 rounded-full text-lg font-semibold transition transform hover:scale-105 shadow-lg">
-                    Vedi Recensioni
-                </a>
+                <a href="#contact" class="bg-primary hover:bg-amber-800 text-white px-8 py-4 rounded-full text-lg font-semibold transition transform hover:scale-105 shadow-lg">Prenota un Tavolo</a>
+                <a href="#reviews" class="bg-white hover:bg-gray-100 text-dark px-8 py-4 rounded-full text-lg font-semibold transition transform hover:scale-105 shadow-lg">Vedi Recensioni</a>
             </div>
         </div>
         <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-            <svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-            </svg>
+            <svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" /></svg>
         </div>
     </section>
 
-    <!-- Google Reviews Section - ESSENZIALE -->
+    <!-- Reviews Section con Slider -->
     <section id="reviews" class="py-16 md:py-20 bg-gradient-to-b from-white to-warm">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12">
@@ -175,57 +155,104 @@
                                 </svg>
                                 Lascia una Recensione su Google
                             </a>
-                            <p class="text-xs md:text-sm text-gray-500">La tua opinione è importante per noi!</p>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Google Reviews Widget (Elfsight) -->
-            <!-- IMPORTANTE: Sostituisci l'ID con quello che ricevi da Elfsight -->
-            <div class="mt-12 flex justify-center">
-                <div class="elfsight-app-REPLACE-WITH-YOUR-ID" data-elfsight-app-lazy></div>
-            </div>
-
-            <!-- Fallback: Recensioni manuali (mostrate se il widget non è configurato) -->
-            <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
-                <!-- Recensione 1 -->
-                <div class="bg-white p-6 md:p-8 rounded-xl shadow-md hover:shadow-lg transition">
-                    <div class="flex text-yellow-400 mb-4">★★★★★</div>
-                    <p class="text-gray-600 mb-4 text-sm md:text-base">"Osteria autentica con piatti della tradizione preparati benissimo. Ambiente rustico e accogliente. Consigliatissimo!"</p>
-                    <div class="flex items-center">
-                        <div class="w-10 h-10 bg-primary rounded-full flex items-center justify-center text-white font-bold text-sm">A</div>
-                        <div class="ml-3">
-                            <p class="font-semibold text-dark text-sm md:text-base">Andrea M.</p>
-                            <p class="text-xs text-gray-500">Recensione Google</p>
+            <!-- Slider Recensioni -->
+            <div class="mt-12">
+                <div class="swiper reviewsSwiper w-full max-w-4xl mx-auto">
+                    <div class="swiper-wrapper">
+                        
+                        <!-- Recensione 1 -->
+                        <div class="swiper-slide">
+                            <div class="bg-white p-8 md:p-10 rounded-2xl shadow-lg mx-4 h-full flex flex-col justify-between">
+                                <div>
+                                    <div class="flex text-yellow-400 mb-4 text-xl">★★★★★</div>
+                                    <p class="text-gray-700 text-lg mb-6 italic">"Osteria autentica con piatti della tradizione preparati benissimo. Ambiente rustico e accogliente. La polenta e brasato è eccezionale!"</p>
+                                </div>
+                                <div class="flex items-center mt-4">
+                                    <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white font-bold">A</div>
+                                    <div class="ml-4">
+                                        <p class="font-semibold text-dark text-base">Andrea M.</p>
+                                        <p class="text-xs text-gray-500">Recensione Google • 2 settimane fa</p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
 
-                <!-- Recensione 2 -->
-                <div class="bg-white p-6 md:p-8 rounded-xl shadow-md hover:shadow-lg transition">
-                    <div class="flex text-yellow-400 mb-4">★★★★★</div>
-                    <p class="text-gray-600 mb-4 text-sm md:text-base">"Posto fantastico per mangiare bene spendendo il giusto. La carne è eccellente e il personale molto gentile."</p>
-                    <div class="flex items-center">
-                        <div class="w-10 h-10 bg-secondary rounded-full flex items-center justify-center text-white font-bold text-sm">S</div>
-                        <div class="ml-3">
-                            <p class="font-semibold text-dark text-sm md:text-base">Silvia P.</p>
-                            <p class="text-xs text-gray-500">Recensione Google</p>
+                        <!-- Recensione 2 -->
+                        <div class="swiper-slide">
+                            <div class="bg-white p-8 md:p-10 rounded-2xl shadow-lg mx-4 h-full flex flex-col justify-between">
+                                <div>
+                                    <div class="flex text-yellow-400 mb-4 text-xl">★★★★★</div>
+                                    <p class="text-gray-700 text-lg mb-6 italic">"Posto fantastico per mangiare bene spendendo il giusto. La carne è eccellente e il personale molto gentile. Torneremo sicuramente!"</p>
+                                </div>
+                                <div class="flex items-center mt-4">
+                                    <div class="w-12 h-12 bg-secondary rounded-full flex items-center justify-center text-white font-bold">S</div>
+                                    <div class="ml-4">
+                                        <p class="font-semibold text-dark text-base">Silvia P.</p>
+                                        <p class="text-xs text-gray-500">Recensione Google • 1 mese fa</p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
 
-                <!-- Recensione 3 -->
-                <div class="bg-white p-6 md:p-8 rounded-xl shadow-md hover:shadow-lg transition">
-                    <div class="flex text-yellow-400 mb-4">★★★★★</div>
-                    <p class="text-gray-600 mb-4 text-sm md:text-base">"Un'osteria come si deve! Piatti abbondanti e saporiti, ottimi i vini locali. Torneremo sicuramente."</p>
-                    <div class="flex items-center">
-                        <div class="w-10 h-10 bg-amber-600 rounded-full flex items-center justify-center text-white font-bold text-sm">F</div>
-                        <div class="ml-3">
-                            <p class="font-semibold text-dark text-sm md:text-base">Francesco L.</p>
-                            <p class="text-xs text-gray-500">Recensione Google</p>
+                        <!-- Recensione 3 -->
+                        <div class="swiper-slide">
+                            <div class="bg-white p-8 md:p-10 rounded-2xl shadow-lg mx-4 h-full flex flex-col justify-between">
+                                <div>
+                                    <div class="flex text-yellow-400 mb-4 text-xl">★★★★★</div>
+                                    <p class="text-gray-700 text-lg mb-6 italic">"Un'osteria come si deve! Piatti abbondanti e saporiti, ottimi i vini locali. Il terrazzo con musica dal vivo è stupendo."</p>
+                                </div>
+                                <div class="flex items-center mt-4">
+                                    <div class="w-12 h-12 bg-amber-600 rounded-full flex items-center justify-center text-white font-bold">F</div>
+                                    <div class="ml-4">
+                                        <p class="font-semibold text-dark text-base">Francesco L.</p>
+                                        <p class="text-xs text-gray-500">Recensione Google • 1 mese fa</p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
+
+                        <!-- Recensione 4 -->
+                        <div class="swiper-slide">
+                            <div class="bg-white p-8 md:p-10 rounded-2xl shadow-lg mx-4 h-full flex flex-col justify-between">
+                                <div>
+                                    <div class="flex text-yellow-400 mb-4 text-xl">★★★★★</div>
+                                    <p class="text-gray-700 text-lg mb-6 italic">"Finalmente un posto dove si mangia la vera cucina veronese. I tortellini sono fatti in casa e si sente. Consigliatissimo!"</p>
+                                </div>
+                                <div class="flex items-center mt-4">
+                                    <div class="w-12 h-12 bg-red-700 rounded-full flex items-center justify-center text-white font-bold">M</div>
+                                    <div class="ml-4">
+                                        <p class="font-semibold text-dark text-base">Marco R.</p>
+                                        <p class="text-xs text-gray-500">Recensione Google • 2 mesi fa</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Recensione 5 -->
+                        <div class="swiper-slide">
+                            <div class="bg-white p-8 md:p-10 rounded-2xl shadow-lg mx-4 h-full flex flex-col justify-between">
+                                <div>
+                                    <div class="flex text-yellow-400 mb-4 text-xl">★★★★★</div>
+                                    <p class="text-gray-700 text-lg mb-6 italic">"Ambiente familiare e accogliente. Ottimo rapporto qualità-prezzo. La colazione è perfetta per iniziare la giornata."</p>
+                                </div>
+                                <div class="flex items-center mt-4">
+                                    <div class="w-12 h-12 bg-green-700 rounded-full flex items-center justify-center text-white font-bold">L</div>
+                                    <div class="ml-4">
+                                        <p class="font-semibold text-dark text-base">Laura B.</p>
+                                        <p class="text-xs text-gray-500">Recensione Google • 2 mesi fa</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
+                    <!-- Pagination -->
+                    <div class="swiper-pagination !bottom-2"></div>
                 </div>
             </div>
 
@@ -245,398 +272,233 @@
         </div>
     </section>
 
-    <!-- About Section -->
+    <!-- About Section con Slider -->
     <section id="about" class="py-16 md:py-20 bg-light">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
                 <div>
                     <h2 class="font-serif text-3xl md:text-4xl font-bold text-dark mb-6">Un'Angolo di Tradizione</h2>
-                    <p class="text-gray-700 mb-6 text-base md:text-lg leading-relaxed">
-                        Benvenuti all'Osteria Corte Casette, dove la cucina tradizionale veronese prende vita in un'atmosfera calda e accogliente. 
+                    <p class="text-gray-700 mb-6 text-lg leading-relaxed">
+                        Benvenuti all'Osteria Corte Casette, dove la cucina tradizionale veronese prende vita in un'atmosfera calda e accogliente.
                     </p>
-                    <p class="text-gray-700 mb-8 text-base md:text-lg leading-relaxed">
-                        La nostra osteria è il luogo perfetto per gustare piatti della tradizione preparati con ingredienti freschi e di qualità, accompagnati da un'ottima selezione di vini locali. Un ambiente rustico e familiare vi farà sentire come a casa.
+                    <p class="text-gray-700 mb-8 text-lg leading-relaxed">
+                        La nostra osteria è il luogo perfetto per gustare piatti della tradizione preparati con ingredienti freschi e di qualità, accompagnati da un'ottima selezione di vini locali.
                     </p>
                     <div class="grid grid-cols-2 gap-4 md:gap-6">
                         <div class="flex items-start">
-                            <div class="flex-shrink-0 w-10 h-10 md:w-12 md:h-12 bg-primary/10 rounded-full flex items-center justify-center">
-                                <svg class="w-5 h-5 md:w-6 md:h-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-                                </svg>
-                            </div>
-                            <div class="ml-4">
-                                <h3 class="font-bold text-dark text-sm md:text-base">Cucina Tradizionale</h3>
-                                <p class="text-xs md:text-sm text-gray-600">Ricette autentiche</p>
-                            </div>
+                            <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center text-xl">🍷</div>
+                            <div class="ml-4"><h3 class="font-bold text-dark">Vini Selezionati</h3><p class="text-sm text-gray-600">Etichette locali</p></div>
                         </div>
                         <div class="flex items-start">
-                            <div class="flex-shrink-0 w-10 h-10 md:w-12 md:h-12 bg-secondary/10 rounded-full flex items-center justify-center">
-                                <svg class="w-5 h-5 md:w-6 md:h-6 text-secondary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                                </svg>
-                            </div>
-                            <div class="ml-4">
-                                <h3 class="font-bold text-dark text-sm md:text-base">Ambiente Rustico</h3>
-                                <p class="text-xs md:text-sm text-gray-600">Atmosfera accogliente</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start">
-                            <div class="flex-shrink-0 w-10 h-10 md:w-12 md:h-12 bg-amber-600/10 rounded-full flex items-center justify-center">
-                                <svg class="w-5 h-5 md:w-6 md:h-6 text-amber-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                </svg>
-                            </div>
-                            <div class="ml-4">
-                                <h3 class="font-bold text-dark text-sm md:text-base">Orari Flessibili</h3>
-                                <p class="text-xs md:text-sm text-gray-600">Dalla colazione alla notte</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start">
-                            <div class="flex-shrink-0 w-10 h-10 md:w-12 md:h-12 bg-red-900/10 rounded-full flex items-center justify-center">
-                                <svg class="w-5 h-5 md:w-6 md:h-6 text-red-900" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                                </svg>
-                            </div>
-                            <div class="ml-4">
-                                <h3 class="font-bold text-dark text-sm md:text-base">Vini Selezionati</h3>
-                                <p class="text-xs md:text-sm text-gray-600">Etichette locali</p>
-                            </div>
+                            <div class="w-12 h-12 bg-secondary/10 rounded-full flex items-center justify-center text-xl">🍝</div>
+                            <div class="ml-4"><h3 class="font-bold text-dark">Pasta Fresca</h3><p class="text-sm text-gray-600">Fatta in casa ogni giorno</p></div>
                         </div>
                     </div>
                 </div>
+                
+                <!-- Slider Immagini About -->
                 <div class="relative">
-                    <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?w=800" alt="Interno osteria" class="rounded-xl shadow-2xl w-full h-64 md:h-auto object-cover">
-                    <div class="absolute -bottom-4 -right-4 md:-bottom-6 md:-right-6 google-badge text-white p-4 md:p-6 rounded-lg shadow-xl hidden md:block">
-                        <p class="font-serif text-2xl md:text-3xl font-bold">4.5★</p>
-                        <p class="text-xs md:text-sm">Su Google Maps</p>
+                    <div class="swiper aboutSwiper w-full h-64 md:h-96 rounded-xl shadow-2xl overflow-hidden">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide"><img src="images/about/ambiente-sala-principale-1.png" alt="Sala principale" class="w-full h-full object-cover"></div>
+                            <div class="swiper-slide"><img src="images/about/ambiente-sala-principale-2.png" alt="Ambiente osteria" class="w-full h-full object-cover"></div>
+                            <div class="swiper-slide"><img src="images/about/ambiente-sala-principale-3.png" alt="Interno ristorante" class="w-full h-full object-cover"></div>
+                        </div>
+                    </div>
+                    <div class="absolute -bottom-4 -right-4 google-badge text-white p-4 rounded-lg shadow-xl hidden md:block z-10">
+                        <p class="font-serif text-2xl font-bold">4.5★</p>
+                        <p class="text-xs">Su Google Maps</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Menu Section -->
+    <!-- Primi Piatti Section -->
     <section id="menu" class="py-16 md:py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12 md:mb-16">
-                <h2 class="font-serif text-3xl md:text-4xl font-bold text-dark mb-4">Le Nostre Specialità</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto text-base md:text-lg">Piatti della tradizione veronese e italiana preparati con passione e ingredienti freschi</p>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
-                <!-- Primi Piatti -->
-                <div class="group relative overflow-hidden rounded-xl shadow-lg cursor-pointer">
-                    <img src="https://images.unsplash.com/photo-1612874742237-6526221588e3?w=600" alt="Primi Piatti" class="w-full h-64 md:h-80 object-cover transition transform group-hover:scale-110">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex flex-col justify-end p-6">
-                        <h3 class="font-serif text-xl md:text-2xl font-bold text-white mb-2">Primi Piatti</h3>
-                        <p class="text-gray-200 text-sm mb-4">Pasta fresca fatta in casa, risotti e zuppe della tradizione</p>
-                        <span class="text-amber-400 font-semibold text-sm">Scopri di più →</span>
-                    </div>
+            <h2 class="font-serif text-3xl md:text-4xl font-bold text-dark mb-4 text-center">I Nostri Primi Piatti</h2>
+            <p class="text-gray-600 text-center max-w-2xl mx-auto mb-10">Pasta fresca fatta in casa e risotti della tradizione veronese</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+                <div class="group relative overflow-hidden rounded-xl shadow-lg h-64 md:h-80">
+                    <img src="images/menu/primi-1.png" alt="Primo 1" class="w-full h-full object-cover transition transform group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-6"><h3 class="text-xl font-bold text-white">Primi Classici</h3></div>
                 </div>
-
-                <!-- Secondi -->
-                <div class="group relative overflow-hidden rounded-xl shadow-lg cursor-pointer">
-                    <img src="https://images.unsplash.com/photo-1600891964092-4316c288032e?w=600" alt="Secondi Piatti" class="w-full h-64 md:h-80 object-cover transition transform group-hover:scale-110">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex flex-col justify-end p-6">
-                        <h3 class="font-serif text-xl md:text-2xl font-bold text-white mb-2">Secondi Piatti</h3>
-                        <p class="text-gray-200 text-sm mb-4">Carni alla griglia, brasati e specialità di carne</p>
-                        <span class="text-amber-400 font-semibold text-sm">Scopri di più →</span>
-                    </div>
+                <div class="group relative overflow-hidden rounded-xl shadow-lg h-64 md:h-80">
+                    <img src="images/menu/primi-2.png" alt="Primo 2" class="w-full h-full object-cover transition transform group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-6"><h3 class="text-xl font-bold text-white">Pasta al Forno</h3></div>
                 </div>
-
-                <!-- Antipasti -->
-                <div class="group relative overflow-hidden rounded-xl shadow-lg cursor-pointer">
-                    <img src="https://images.unsplash.com/photo-1541529086526-db283c563270?w=600" alt="Antipasti" class="w-full h-64 md:h-80 object-cover transition transform group-hover:scale-110">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex flex-col justify-end p-6">
-                        <h3 class="font-serif text-xl md:text-2xl font-bold text-white mb-2">Antipasti</h3>
-                        <p class="text-gray-200 text-sm mb-4">Taglieri di salumi e formaggi, bruschette e stuzzicherie</p>
-                        <span class="text-amber-400 font-semibold text-sm">Scopri di più →</span>
-                    </div>
+                <div class="group relative overflow-hidden rounded-xl shadow-lg h-64 md:h-80">
+                    <img src="images/menu/primi-3.png" alt="Primo 3" class="w-full h-full object-cover transition transform group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-6"><h3 class="text-xl font-bold text-white">Tortellini Freschi</h3></div>
                 </div>
-            </div>
-
-            <!-- Additional Info -->
-            <div class="mt-12 md:mt-16 bg-warm rounded-2xl p-6 md:p-12">
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 text-center">
-                    <div>
-                        <div class="w-14 h-14 md:w-16 md:h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                            <svg class="w-7 h-7 md:w-8 md:h-8 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                            </svg>
-                        </div>
-                        <h4 class="font-bold text-dark mb-2 text-base md:text-lg">Colazione</h4>
-                        <p class="text-gray-700 text-sm">Dalle 6:30 - Caffè e cornetti</p>
-                    </div>
-                    <div>
-                        <div class="w-14 h-14 md:w-16 md:h-16 bg-secondary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                            <svg class="w-7 h-7 md:w-8 md:h-8 text-secondary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                            </svg>
-                        </div>
-                        <h4 class="font-bold text-dark mb-2 text-base md:text-lg">Pranzo</h4>
-                        <p class="text-gray-700 text-sm">Piatti della tradizione</p>
-                    </div>
-                    <div>
-                        <div class="w-14 h-14 md:w-16 md:h-16 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                            <svg class="w-7 h-7 md:w-8 md:h-8 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                            </svg>
-                        </div>
-                        <h4 class="font-bold text-dark mb-2 text-base md:text-lg">Cena</h4>
-                        <p class="text-gray-700 text-sm">Fino a mezzanotte</p>
-                    </div>
+                <div class="group relative overflow-hidden rounded-xl shadow-lg h-64 md:h-80">
+                    <img src="images/menu/primi-4.png" alt="Primo 4" class="w-full h-full object-cover transition transform group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-6"><h3 class="text-xl font-bold text-white">Risotti Veneti</h3></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Gallery Section -->
-    <section id="gallery" class="py-16 md:py-20 bg-light">
+    <!-- Secondi Piatti Section -->
+    <section class="py-16 md:py-20 bg-light">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h2 class="font-serif text-3xl md:text-4xl font-bold text-dark mb-4">Galleria</h2>
-                <p class="text-gray-600">Scopri la nostra osteria e i nostri piatti</p>
+            <h2 class="font-serif text-3xl md:text-4xl font-bold text-dark mb-4 text-center">I Nostri Secondi</h2>
+            <p class="text-gray-600 text-center max-w-2xl mx-auto mb-10">Carne, pesce e specialità della tradizione</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+                <div class="group relative overflow-hidden rounded-xl shadow-lg h-64 md:h-80">
+                    <img src="images/secondi/secondi-1.png" alt="Secondo 1" class="w-full h-full object-cover transition transform group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-6"><h3 class="text-xl font-bold text-white">Tradizione & Legumi</h3></div>
+                </div>
+                <div class="group relative overflow-hidden rounded-xl shadow-lg h-64 md:h-80">
+                    <img src="images/secondi/secondi-2.png" alt="Secondo 2" class="w-full h-full object-cover transition transform group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-6"><h3 class="text-xl font-bold text-white">Il Classico Veneto</h3></div>
+                </div>
+                <div class="group relative overflow-hidden rounded-xl shadow-lg h-64 md:h-80">
+                    <img src="images/secondi/secondi-3.png" alt="Secondo 3" class="w-full h-full object-cover transition transform group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-6"><h3 class="text-xl font-bold text-white">Freschezza & Qualità</h3></div>
+                </div>
+                <div class="group relative overflow-hidden rounded-xl shadow-lg h-64 md:h-80">
+                    <img src="images/secondi/secondi-4.png" alt="Secondo 4" class="w-full h-full object-cover transition transform group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-6"><h3 class="text-xl font-bold text-white">Dal Mare alla Tavola</h3></div>
+                </div>
             </div>
-            
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
-                <div class="col-span-2 row-span-2">
-                    <img src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?w=800" alt="Osteria" class="w-full h-48 md:h-full object-cover rounded-xl shadow-md hover:shadow-xl transition">
+        </div>
+    </section>
+
+    <!-- Gallery Section (Slider) -->
+    <section id="gallery" class="py-16 md:py-20 bg-white overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="font-serif text-3xl md:text-4xl font-bold text-dark mb-4 text-center">Il Nostro Ambiente</h2>
+            <p class="text-gray-600 text-center max-w-2xl mx-auto mb-10">Un'atmosfera calda, familiare e divertente</p>
+            <div class="swiper mySwiper w-full h-[300px] md:h-[500px] rounded-2xl shadow-2xl overflow-hidden relative">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide relative">
+                        <img src="images/gallery/gallery-interno-1.png" alt="Galleria 1" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-8"><h3 class="text-2xl font-bold text-white">La Sala Principale</h3></div>
+                    </div>
+                    <div class="swiper-slide relative">
+                        <img src="images/gallery/gallery-interno-2.png" alt="Galleria 2" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-8"><h3 class="text-2xl font-bold text-white">Dettagli e Atmosfera</h3></div>
+                    </div>
+                    <div class="swiper-slide relative">
+                        <img src="images/gallery/gallery-interno-3.png" alt="Galleria 3" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-8"><h3 class="text-2xl font-bold text-white">Musica dal Vivo</h3></div>
+                    </div>
                 </div>
-                <div>
-                    <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?w=400" alt="Piatto tipico" class="w-full h-32 md:h-48 object-cover rounded-xl shadow-md hover:shadow-xl transition">
-                </div>
-                <div>
-                    <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=400" alt="Carne" class="w-full h-32 md:h-48 object-cover rounded-xl shadow-md hover:shadow-xl transition">
-                </div>
-                <div>
-                    <img src="https://images.unsplash.com/photo-1550966871-3ed3c47e2ce2?w=400" alt="Vino" class="w-full h-32 md:h-48 object-cover rounded-xl shadow-md hover:shadow-xl transition">
-                </div>
-                <div>
-                    <img src="https://images.unsplash.com/photo-1551218808-94e220e084d2?w=400" alt="Ambiente" class="w-full h-32 md:h-48 object-cover rounded-xl shadow-md hover:shadow-xl transition">
-                </div>
+                <div class="swiper-button-next !text-white after:!text-xl"></div>
+                <div class="swiper-button-prev !text-white after:!text-xl"></div>
+                <div class="swiper-pagination !bottom-4"></div>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
     <section id="contact" class="py-16 md:py-20 bg-dark text-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
-                <div>
-                    <h2 class="font-serif text-3xl md:text-4xl font-bold mb-6">Prenota il Tuo Tavolo</h2>
-                    <p class="text-gray-300 mb-8 text-base md:text-lg">Compila il form o chiamaci per prenotare. Ti aspettiamo per un'esperienza gastronomica indimenticabile!</p>
-                    
-                    <div class="space-y-5 md:space-y-6">
-                        <div class="flex items-start">
-                            <svg class="w-5 h-5 md:w-6 md:h-6 text-amber-400 mt-1 mr-4 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                            </svg>
-                            <div>
-                                <h4 class="font-bold mb-1 text-base md:text-lg">Indirizzo</h4>
-                                <p class="text-gray-300 text-sm">Via Feniletto, 11<br>37036 San Martino Buon Albergo VR</p>
-                            </div>
-                        </div>
-
-                        <div class="flex items-start">
-                            <svg class="w-5 h-5 md:w-6 md:h-6 text-amber-400 mt-1 mr-4 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                            </svg>
-                            <div>
-                                <h4 class="font-bold mb-1 text-base md:text-lg">Telefono</h4>
-                                <p class="text-gray-300 text-sm">+39 342 701 0184</p>
-                            </div>
-                        </div>
-
-                        <div class="flex items-start">
-                            <svg class="w-5 h-5 md:w-6 md:h-6 text-amber-400 mt-1 mr-4 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                            </svg>
-                            <div>
-                                <h4 class="font-bold mb-1 text-base md:text-lg">Orari di Apertura</h4>
-                                <p class="text-gray-300 text-sm">Martedì - Domenica: 6:30 - 00:00<br>Lunedì: Chiuso</p>
-                            </div>
-                        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+            <div>
+                <h2 class="font-serif text-3xl md:text-4xl font-bold mb-6">Prenota il Tuo Tavolo</h2>
+                <p class="text-gray-300 mb-8">Compila il form o chiamaci per prenotare. Ti aspettiamo!</p>
+                <div class="space-y-4">
+                    <div class="flex items-start">
+                        <svg class="w-6 h-6 text-amber-400 mt-1 mr-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+                        <div><h4 class="font-bold">Indirizzo</h4><p class="text-gray-300 text-sm">Via Feniletto, 11 - 37036 San Martino Buon Albergo VR</p></div>
                     </div>
-
-                    <div class="mt-8">
-                        <a href="https://maps.google.com/?q=Via+Feniletto,+11,+37036+San+Martino+Buon+Albergo+VR" target="_blank" rel="noopener noreferrer" class="inline-flex items-center bg-primary hover:bg-amber-800 text-white px-5 py-2.5 md:px-6 md:py-3 rounded-full transition text-sm md:text-base">
-                            <svg class="w-4 h-4 md:w-5 md:h-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
-                            </svg>
-                            Come Arrivare
-                        </a>
+                    <div class="flex items-start">
+                        <svg class="w-6 h-6 text-amber-400 mt-1 mr-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
+                        <div><h4 class="font-bold">Telefono</h4><p class="text-gray-300 text-sm">+39 342 701 0184</p></div>
+                    </div>
+                    <div class="flex items-start">
+                        <svg class="w-6 h-6 text-amber-400 mt-1 mr-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                        <div><h4 class="font-bold">Orari</h4><p class="text-gray-300 text-sm">Mar-Dom: 6:30 - 00:00 | Lun: Chiuso</p></div>
                     </div>
                 </div>
-
-                <div class="bg-white rounded-xl p-6 md:p-8 text-gray-800">
-                    <form onsubmit="handleSubmit(event)" class="space-y-5">
-                        <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-2">Nome e Cognome *</label>
-                            <input type="text" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition text-sm" placeholder="Mario Rossi">
-                        </div>
-                        
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                            <div>
-                                <label class="block text-sm font-medium text-gray-700 mb-2">Telefono *</label>
-                                <input type="tel" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition text-sm" placeholder="+39 123 456 7890">
-                            </div>
-                            <div>
-                                <label class="block text-sm font-medium text-gray-700 mb-2">Persone *</label>
-                                <select required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition text-sm">
-                                    <option value="">Seleziona</option>
-                                    <option value="1">1 persona</option>
-                                    <option value="2">2 persone</option>
-                                    <option value="3">3 persone</option>
-                                    <option value="4">4 persone</option>
-                                    <option value="5">5 persone</option>
-                                    <option value="6">6+ persone</option>
-                                </select>
-                            </div>
-                        </div>
-
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                            <div>
-                                <label class="block text-sm font-medium text-gray-700 mb-2">Data *</label>
-                                <input type="date" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition text-sm">
-                            </div>
-                            <div>
-                                <label class="block text-sm font-medium text-gray-700 mb-2">Orario *</label>
-                                <select required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition text-sm">
-                                    <option value="">Seleziona</option>
-                                    <option value="12:00">12:00</option>
-                                    <option value="12:30">12:30</option>
-                                    <option value="13:00">13:00</option>
-                                    <option value="13:30">13:30</option>
-                                    <option value="19:00">19:00</option>
-                                    <option value="19:30">19:30</option>
-                                    <option value="20:00">20:00</option>
-                                    <option value="20:30">20:30</option>
-                                    <option value="21:00">21:00</option>
-                                </select>
-                            </div>
-                        </div>
-
-                        <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-2">Note Speciali</label>
-                            <textarea rows="3" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition text-sm" placeholder="Allergie, richieste speciali..."></textarea>
-                        </div>
-
-                        <button type="submit" class="w-full bg-primary hover:bg-amber-800 text-white font-bold py-3 md:py-4 rounded-lg transition transform hover:scale-[1.02] text-sm md:text-base">
-                            Invia Prenotazione
-                        </button>
-                        <p class="text-xs text-gray-500 text-center">* Campi obbligatori</p>
-                    </form>
-                </div>
+            </div>
+            <div class="bg-white rounded-xl p-6 text-gray-800">
+                <form onsubmit="handleSubmit(event)" class="space-y-4">
+                    <input type="text" required class="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-primary" placeholder="Nome e Cognome">
+                    <div class="grid grid-cols-2 gap-4">
+                        <input type="tel" required class="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-primary" placeholder="Telefono">
+                        <select required class="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-primary">
+                            <option value="">Persone</option><option>2</option><option>3</option><option>4</option><option>5+</option>
+                        </select>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4">
+                        <input type="date" required class="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-primary">
+                        <select required class="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-primary">
+                            <option value="">Orario</option><option>12:00</option><option>13:00</option><option>19:00</option><option>20:00</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="w-full bg-primary hover:bg-amber-800 text-white font-bold py-3 rounded-lg transition">Invia Prenotazione</button>
+                </form>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-10 md:py-12 border-t border-gray-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
-                <div>
-                    <h3 class="font-serif text-xl md:text-2xl font-bold mb-4">OSTERIA CORTE CASETTE</h3>
-                    <p class="text-gray-400 text-sm">Tradizione e sapori autentici nel cuore di San Martino Buon Albergo. Un'osteria dove sentirsi a casa.</p>
-                </div>
-                <div>
-                    <h4 class="font-bold mb-4 text-base md:text-lg">Link Rapidi</h4>
-                    <ul class="space-y-2 text-sm text-gray-400">
-                        <li><a href="#home" class="hover:text-white transition">Home</a></li>
-                        <li><a href="#about" class="hover:text-white transition">La Nostra Storia</a></li>
-                        <li><a href="#reviews" class="hover:text-white transition">Recensioni</a></li>
-                        <li><a href="#menu" class="hover:text-white transition">Menu</a></li>
-                        <li><a href="#contact" class="hover:text-white transition">Prenotazioni</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="font-bold mb-4 text-base md:text-lg">Contatti</h4>
-                    <p class="text-gray-400 text-sm mb-2">Via Feniletto, 11<br>37036 San Martino Buon Albergo VR</p>
-                    <p class="text-gray-400 text-sm mb-3">Tel: <a href="tel:+393427010184" class="hover:text-amber-400 transition">+39 342 701 0184</a></p>
-                    <div class="flex space-x-3">
-                        <a href="https://g.co/kgs/5TBx82z" target="_blank" rel="noopener noreferrer" class="w-9 h-9 bg-gray-800 rounded-full flex items-center justify-center hover:bg-blue-600 transition" title="Google Reviews">
-                            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="border-t border-gray-800 pt-6 md:pt-8 text-center text-xs md:text-sm text-gray-400">
-                <p>&copy; 2024 Osteria Corte Casette. Tutti i diritti riservati.</p>
-                <p class="mt-1">Sito web realizzato con ❤️ per la tradizione veronese</p>
-            </div>
-        </div>
+    <footer class="bg-gray-900 text-white py-8 text-center border-t border-gray-800">
+        <p class="text-gray-400 text-sm">&copy; 2024 Osteria Corte Casette. Tutti i diritti riservati.</p>
     </footer>
 
-    <!-- JavaScript -->
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    
+    <!-- Scripts -->
     <script>
-        // Mobile menu toggle
-        function toggleMenu() {
-            const menu = document.getElementById('mobile-menu');
-            menu.classList.toggle('hidden');
-        }
-
-        // Close mobile menu when clicking a link
-        document.querySelectorAll('#mobile-menu a').forEach(link => {
-            link.addEventListener('click', () => {
-                document.getElementById('mobile-menu').classList.add('hidden');
-            });
+        // Inizializzazione Slider Gallery
+        new Swiper(".mySwiper", { 
+            spaceBetween: 30, 
+            centeredSlides: true, 
+            autoplay: { delay: 4000, disableOnInteraction: false }, 
+            pagination: { el: ".swiper-pagination", clickable: true }, 
+            navigation: { nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" }, 
+            loop: true, 
+            speed: 800 
+        });
+        
+        // Inizializzazione Slider About
+        new Swiper(".aboutSwiper", {
+            spaceBetween: 0,
+            loop: true,
+            autoplay: { delay: 3500, disableOnInteraction: false },
+            speed: 800,
+            effect: 'fade',
+            fadeEffect: { crossFade: true }
         });
 
-        // Navbar scroll effect
-        window.addEventListener('scroll', function() {
-            const navbar = document.getElementById('navbar');
-            if (window.scrollY > 50) {
-                navbar.classList.add('shadow-lg');
-            } else {
-                navbar.classList.remove('shadow-lg');
+        // Inizializzazione Slider Recensioni
+        new Swiper(".reviewsSwiper", {
+            slidesPerView: 1,
+            spaceBetween: 30,
+            loop: true,
+            autoplay: { delay: 5000, disableOnInteraction: false },
+            speed: 800,
+            pagination: { el: ".swiper-pagination", clickable: true },
+            breakpoints: {
+                640: { slidesPerView: 1 },
+                768: { slidesPerView: 2 },
             }
         });
 
-        // Form submission handler
-        function handleSubmit(e) {
-            e.preventDefault();
-            // Qui puoi integrare un servizio reale come Formspree, EmailJS, ecc.
-            alert('Grazie per la prenotazione! Ti contatteremo presto al numero fornito per confermare.');
-            e.target.reset();
+        // Mobile Menu
+        function toggleMenu() { document.getElementById('mobile-menu').classList.toggle('hidden'); }
+        document.querySelectorAll('#mobile-menu a').forEach(l => l.addEventListener('click', () => document.getElementById('mobile-menu').classList.add('hidden')));
+        
+        // Navbar Scroll Effect
+        window.addEventListener('scroll', () => document.getElementById('navbar').classList.toggle('shadow-lg', window.scrollY > 50));
+        
+        // Form Handler
+        function handleSubmit(e) { 
+            e.preventDefault(); 
+            alert('Grazie per la prenotazione! Ti contatteremo presto.'); 
+            e.target.reset(); 
         }
-
-        // Smooth scroll for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // Intersection Observer for fade-in animations (optional enhancement)
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('opacity-100', 'translate-y-0');
-                    entry.target.classList.remove('opacity-0', 'translate-y-4');
-                }
-            });
-        }, observerOptions);
-
-        // Observe sections for animation
-        document.querySelectorAll('section').forEach(section => {
-            section.classList.add('transition-all', 'duration-700', 'opacity-0', 'translate-y-4');
-            observer.observe(section);
-        });
+        
+        // Smooth Scroll
+        document.querySelectorAll('a[href^="#"]').forEach(a => a.addEventListener('click', e => { 
+            e.preventDefault(); 
+            document.querySelector(a.getAttribute('href'))?.scrollIntoView({ behavior: 'smooth' }); 
+        }));
     </script>
 </body>
 </html>
